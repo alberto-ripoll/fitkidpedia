@@ -2,15 +2,15 @@ version: '3'
 
 services: 
 
-  back-end:
+  backend:
     build: 
-      context: node
-    container_name: back-end
+      context: backend
+    container_name: backend
     working_dir: /usr/src/app
     networks: 
       - node-network
     volumes: 
-      - ./node:/usr/src/app
+      - ./backend:/usr/src/app
       - /usr/src/app/node_modules
     tty: true
     ports: 
@@ -19,20 +19,20 @@ services:
     depends_on:
        - db
 
-  front-end:
+  frontend:
     build: 
-      context: react
-    container_name: front-end
+      context: frontend
+    container_name: frontend
     working_dir: /usr/src/app
     networks: 
       - node-network
     volumes: 
-      - ./react:/usr/src/app
+      - ./frontend:/usr/src/app
       - /usr/src/app/node_modules
     tty: true
     ports: 
       - "5173:5173"
-    command: npm run dev
+    command: npm run start
 
   db:
     image: postgres
@@ -59,8 +59,8 @@ services:
     networks: 
       - node-network
     depends_on:
-       - back-end
-       - front-end
+       - backend
+       - frontend
   
 networks: 
   node-network:
