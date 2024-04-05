@@ -11,6 +11,6 @@ class ContextController extends Controller
 {
     public function show()
     {
-        return ApiResponse::json();
+        return ApiResponse::json([]);
     }
 }

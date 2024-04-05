@@ -19,11 +19,6 @@ services:
     command: php artisan serve --host=0.0.0.0 --port=8000
     depends_on:
       - db
-    environment:
-      - DB_DATABASE=db
-      - DB_PORT=5432
-      - DB_USERNAME=postgres
-      - DB_PASSWORD=1234
 
   frontend:
     build: 

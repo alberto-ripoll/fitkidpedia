@@ -3,9 +3,6 @@
 namespace Tests\Src\Context\Infrastructure\Web;
 
 use Tests\TestCase;
-use Src\Shared\Dao\Rol\Domain\RolesConstants;
-use Src\Shared\Dao\Usuario\Infrastructure\Eloquent\UsuarioEloquentModel;
-use Src\Shared\Dao\UsuarioDeportista\Infrastructure\Eloquent\UsuarioDeportistaEloquentModel;
 
 class ContextApiTest extends TestCase
 {

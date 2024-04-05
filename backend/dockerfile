@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
     openssl \
     libzip-dev 
 
-RUN docker-php-ext-install gd pdo pdo_pgsql pgsql \
+RUN docker-php-ext-install gd pdo pdo_pgsql pgsql sockets \
     && pecl install redis \
     && docker-php-ext-enable redis
 
