@@ -1,28 +1,51 @@
-FROM php:8.1-fpm
+FROM php:8.2-fpm
 
-WORKDIR /var/www/html
+# Argumentos definidos en docker-compose.yml
+ARG user
+ARG uid
 
+# Instalar dependencias del sistema para extensiones de PHP
 RUN apt-get update && apt-get install -y \
-    libzip-dev \
+    libpq-dev \
+    git \
+    curl \
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
     zip \
-    && docker-php-ext-install pdo_mysql zip
+    unzip \
+    supervisor \
+    nginx \
+    build-essential \
+    openssl \
+    libzip-dev 
 
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN docker-php-ext-install gd pdo pdo_pgsql pgsql \
+    && pecl install redis \
+    && docker-php-ext-enable redis
 
-COPY composer.json composer.json
-COPY composer.lock composer.lock
+# Obtener el Composer más reciente
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-RUN composer install --no-dev --optimize-autoloader
+# Crear un usuario del sistema para ejecutar Composer y comandos de Artisan
+RUN useradd -G www-data,root -u $uid -d /home/$user $user
+RUN mkdir -p /home/$user/.composer && chown -R $user:$user /home/$user
 
+# Establecer el directorio de trabajo
+WORKDIR /var/www
+
+# Copiar los archivos de la aplicación
 COPY . .
 
-COPY .env.example .env
-RUN php artisan key:generate
+# Instalar dependencias de la aplicación
+RUN composer install
 
-RUN chown -R www-data:www-data \
-    /var/www/html/storage \
-    /var/www/html/bootstrap/cache
+# Cambiar la propiedad de todos los archivos a nuestro usuario
+RUN chown -R $user:$user /var/www
 
-EXPOSE 9000
+# Exponer el puerto en el que se ejecutará la aplicación
+EXPOSE 8000
 
-CMD ["php-fpm"]
+
+# Comando para ejecutar al iniciar el contenedor
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]

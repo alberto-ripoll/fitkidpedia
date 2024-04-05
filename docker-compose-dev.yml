@@ -4,20 +4,26 @@ services:
 
   backend:
     build: 
-      context: backend
+      context: ./backend
+      dockerfile: Dockerfile
       args:
-        NODE_ENV: development
+        user: fitkidpedia
+        uid: 1001
     container_name: backend
-    working_dir: /usr/src/app
+    working_dir: /var/www
     volumes: 
-      - ./backend:/usr/src/app
-      - /usr/src/app/node_modules
-    tty: true
+      - ./backend:/var/www
+      - /var/www/vendor
     ports: 
-      - "3001:3001"
-    command: npm run dev
+      - "8000:8000"
+    command: php artisan serve --host=0.0.0.0 --port=8000
     depends_on:
-       - db
+      - db
+    environment:
+      - DB_DATABASE=db
+      - DB_PORT=5432
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=1234
 
   frontend:
     build: 

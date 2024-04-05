@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Database\Eloquent\Relations\Relation;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -11,7 +12,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        Relation::morphMap(
+            ['App\Models\User' => 'Src\Shared\Dao\Usuario\Infrastructure\Eloquent\UsuarioEloquentModel']
+        );
     }
 
     /**
