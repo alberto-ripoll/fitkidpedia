@@ -6,7 +6,7 @@ const categories = [
   {
     id: 1,
     ruta: '/elementos',
-    name: 'Elementos',
+    name: 'Ejercicios',
     imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYPB0US8bMwBcrJ3lbsdfQSXgMNxLeoPGeehlUqrk90A&s',
   },
   {

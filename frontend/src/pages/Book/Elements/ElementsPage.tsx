@@ -5,103 +5,55 @@ import SelectCategories from "../../../components/SelectCategories";
 import ExerciseCard from "../Exercises/components/ExerciseCard";
 import SelectNiveles from "../../../components/ComplexSelect";
 import ComplexSelect from "../../../components/ComplexSelect";
+import { ElementsService } from "./service/ElementsService";
 
 function ElementsPage({ category = "" }: { category: string }) {
-  const [selectedCategory, setSelectedCategory] = useState("");
+  const [elements, setElements] = useState<any[]>([]);
+  const fetchData = async () => {
+    try {
+      const response = await getElementsByCategory(category);
+      setElements(response); // Almacena los datos recibidos en el estado del componente
+    } catch (error) {
+      console.error("Error fetching elements:", error);
+    }
+  };
+  const getElementsByCategory = async (category: string) => {
+    return await new ElementsService().getElementsByCategory(category);
+
+  };
 
   useEffect(() => {
-    switch (selectedCategory) {
-      case "Flexibilidad":
-        document.location.href = "/elementos/flexibilidad";
-        break;
-      case "Fuerza":
-        document.location.href = "/elementos/fuerza";
-        break;
-      default:
-        break;
-    }
-    console.log(`Categoría seleccionada: ${selectedCategory}`);
-  }, [selectedCategory]);
+    fetchData();
+  },[category]);
+
+ 
+
+
   return (
     <>
-      <div className="flex w-full flex-col mx-8 pb-40">
+      <div className="flex w-full flex-col pb-40 justify-center items-center">
         <div className="flex flex-col mx-4">
           <h1 className="text-4xl font-bold text-black mt-10 text-center">
-            Elementos de {category}{" "}
+            Ejercicios de {category}{" "}
           </h1>
           <SearchBar />
           <div className="flex justify-center mb-8"></div>
 
-          <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 justify-center">
-            <ExerciseCard
-              dificultad="A"
-              id="1"
-              ruta="/elementos/flexibilidad/cogida-estirada"
-              imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYPB0US8bMwBcrJ3lbsdfQSXgMNxLeoPGeehlUqrk90A&s"
-              name="Mastepanova"
-            />{" "}
-              <ExerciseCard
-              dificultad="A"
-              id="1"
-              ruta="/elementos/flexibilidad/cogida-estirada"
-              imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYPB0US8bMwBcrJ3lbsdfQSXgMNxLeoPGeehlUqrk90A&s"
-              name="Mastepanova"
-            />{" "}  <ExerciseCard
-            dificultad="A"
-            id="1"
-            ruta="/elementos/flexibilidad/cogida-estirada"
-            imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYPB0US8bMwBcrJ3lbsdfQSXgMNxLeoPGeehlUqrk90A&s"
-            name="Mastepanova"
-          />{" "}  <ExerciseCard
-          dificultad="A"
-          id="1"
-          ruta="/elementos/flexibilidad/cogida-estirada"
-          imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYPB0US8bMwBcrJ3lbsdfQSXgMNxLeoPGeehlUqrk90A&s"
-          name="Mastepanova"
-        />{" "}
-            <ExerciseCard
-              dificultad="A"
-              id="1"
-              ruta="/elementos/flexibilidad/cogida-estirada"
-              imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYPB0US8bMwBcrJ3lbsdfQSXgMNxLeoPGeehlUqrk90A&s"
-              name="Mastepanova"
-            />{" "}
-            <ExerciseCard
-              dificultad="A"
-              id="1"
-              ruta="/elementos/flexibilidad/cogida-estirada"
-              imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYPB0US8bMwBcrJ3lbsdfQSXgMNxLeoPGeehlUqrk90A&s"
-              name="Mastepanova"
-            />
-            <ExerciseCard
-              id="1"
-              dificultad="A"
-              ruta="hola"
-              imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYPB0US8bMwBcrJ3lbsdfQSXgMNxLeoPGeehlUqrk90A&s"
-              name="Un truco mega largo"
-            />
-            <ExerciseCard
-              id="1"
-              dificultad="B"
-              ruta="hola"
-              imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYPB0US8bMwBcrJ3lbsdfQSXgMNxLeoPGeehlUqrk90A&s"
-              name="Rondada mortal"
-            />
-            <ExerciseCard
-              id="1"
-              dificultad="C"
-              ruta="hola"
-              imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYPB0US8bMwBcrJ3lbsdfQSXgMNxLeoPGeehlUqrk90A&s"
-              name="Rondada flick abierto mortal abierto"
-            />
-            <ExerciseCard
-              id="1"
-              dificultad="G"
-              ruta="hola"
-              imageUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYPB0US8bMwBcrJ3lbsdfQSXgMNxLeoPGeehlUqrk90A&s"
-              name="Paloma sin manos"
-            />
+          {/* <section className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 max-[1400px]:grid-cols-3 min-[1200px]:grid-cols-4 lg:grid-cols-4 gap-10 justify-center w-full"> */}
+          <section className="grid gap-10 justify-center w-full max-[1500px]:grid-cols-3 min-[1200px]:grid-cols-4">
+            {elements.map((element: any) => (
+              <div key={element.id} className="w-full sm:w-full md:w-1/2 lg:w-1/4">
+                <ExerciseCard
+                  id={element.id}
+                  dificultad={element.difficulty}
+                  ruta={`/elementos/${element.category}/${element.name.replace(/\s/g, "-").toLowerCase()}`}
+                  imageUrl={element.imageUrl}
+                  name={element.name}
+                />
+              </div>
+            ))}
           </section>
+
         </div>
       </div>
     </>

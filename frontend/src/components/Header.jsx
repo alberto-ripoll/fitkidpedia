@@ -7,8 +7,7 @@ const Header = ({ toggleMenu }) => {
 
   return (
     <nav className="bg-white fixed w-full top-0 z-50 border-y">
-      {shouldShowAddButton && (
-      <button onClick={toggleMenu} className="absolute left-4 top-4 md:hidden">
+      <button onClick={toggleMenu} className="absolute left-4 top-4 lg:hidden">
         <svg
           className="w-6 h-6"
           fill="none"
@@ -24,7 +23,6 @@ const Header = ({ toggleMenu }) => {
           ></path>
         </svg>
       </button>
-      )}
       <div className="flex justify-center items-center h-full w-full">
         <Link to="/" className="flex justify-center items-center py-4">
           <span className="font-semibold text-gray-500 text-lg">
@@ -36,9 +34,25 @@ const Header = ({ toggleMenu }) => {
       {shouldShowAddButton && (
         <Link
           to="/elementos/nuevo-elemento"
-          className="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out fixed top-0 right-0 mt-4 mr-4 hover:scale-105 active:scale-95"
+          className="flex bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out fixed top-4 right-4 hover:scale-105 active:scale-95"
         >
-          Añadir elemento
+          <span className="hidden md:inline px-4 py-2 ">Añadir elemento</span>
+    <span className="md:hidden  px-4 py-1 ">
+      <svg
+        className="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+        ></path>
+      </svg>
+    </span>
         </Link>
       )}
     </nav>

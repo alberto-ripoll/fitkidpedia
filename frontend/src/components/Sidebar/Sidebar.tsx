@@ -4,7 +4,7 @@ import SidebarItemComponent from "./SidebarItemComponent";
 
 const items = [
   {
-    text: "Elementos",
+    text: "Ejercicios",
     link: "/elementos",
     items: [
       {

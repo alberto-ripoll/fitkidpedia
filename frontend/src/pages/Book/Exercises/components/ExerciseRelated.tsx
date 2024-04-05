@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-interface ExerciseRelatedProps {
+interface ExerciseCardProps {
   id: string;
   dificultad: string;
   ruta: string;
@@ -9,7 +9,7 @@ interface ExerciseRelatedProps {
   name: string;
 }
 
-function ExerciseRelated({ id, ruta, dificultad, imageUrl, name }: ExerciseRelatedProps) {
+function ExerciseRelated({ id, ruta, dificultad, imageUrl, name }: ExerciseCardProps) {
   let navigate = useNavigate();
 
   // Objeto para mapear la dificultad a colores
@@ -24,9 +24,9 @@ function ExerciseRelated({ id, ruta, dificultad, imageUrl, name }: ExerciseRelat
   const getBackgroundColor = (dificultad: string) => difficultyColors[dificultad] || 'bg-gray-500';
 
   return (
-    <div key={id} className="relative cursor-pointer w-62 h-52" onClick={() => navigate(ruta)}>
-      <img src={imageUrl} alt={name} className="w-full h-full object-cover rounded-lg" />
-      <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 w-full h-full p-4 rounded-lg flex items-end">
+      <div key={id} className="relative cursor-pointer h-48 lg:w-80 md:w-64 shadow-md" onClick={() => navigate(ruta)}>
+      <img src={imageUrl} alt={name} className="w-full h-full object-fit" />
+      <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 w-full h-full p-4 flex items-end">
         <h5 className="text-white text-xl">{name}</h5>
       </div>
       <div className={`absolute top-0 right-0 ${getBackgroundColor(dificultad)} p-2 rounded-bl-lg`}>

@@ -1,0 +1,45 @@
+version: '3'
+
+services: 
+
+  backend:
+    build: 
+      context: backend
+      args:
+        NODE_ENV: development
+    container_name: backend
+    working_dir: /usr/src/app
+    volumes: 
+      - ./backend:/usr/src/app
+      - /usr/src/app/node_modules
+    tty: true
+    ports: 
+      - "3001:3001"
+    command: npm run dev
+    depends_on:
+       - db
+
+  frontend:
+    build: 
+      context: frontend
+    container_name: frontend
+    working_dir: /usr/src/app
+    volumes: 
+      - ./frontend:/usr/src/app
+      - /usr/src/app/node_modules
+    tty: true
+    ports: 
+      - "3000:3000"
+    command: npm run start
+
+  db:
+    image: postgres
+    container_name: db
+    restart: always
+    tty: true
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    environment: 
+      - POSTGRES_PASSWORD=1234
+    ports: 
+      - "5432:5432"

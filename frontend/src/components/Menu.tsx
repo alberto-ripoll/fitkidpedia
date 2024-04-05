@@ -77,28 +77,45 @@ const MenuLateral = ({ isMenuOpen }: { isMenuOpen: boolean }) => {
   ];
   const nestedNavCompeticion = [
     { name: "Ejercicios", href: "/puntuacion/ejercicios", icon: "" },
+    { name: "Técnica", href: "/puntuacion/tecnica", icon: "" },
+    { name: "Artístico", href: "/puntuacion/artistico", icon: "" },
+    { name: "Total", href: "/puntuacion/total", icon: "" },
+  ];  const nestedNavCompeticionGrupal = [
+    { name: "Duo, Small y Big", href: "/puntuacion-grupal/grupos", icon: "" },
+    { name: "Big Free", href: "/puntuacion-grupal/big-free", icon: "" },
   ];
 
   if (location.pathname === "/") {
     return null;
   }
   return (
-    <div style={{ display: isMenuOpen ? "block h-full" : "none" }}>
+    <div className={`${isMenuOpen ? "block " : "hidden"} lg:block sm:hidden pb-40`}> {/* Ocultar en pantallas md */}
+        {/* // <div className={`${isMenuOpen ? "sm:fixed sm:inset-0 sm:z-50 sm:overflow-y-auto sm:py-12 md:block" : "hidden"}`}> */}
+
       <nav className="my-2 top-0 left-0 w-full h-full bg-white space-y-8 sm:w-80 border-r overflow-y-auto">
         <h1 className="text-2xl font-bold px-4">FITKID BOOK</h1>
         <div className="flex flex-col h-full px-4">
           <div className="overflow-auto">
             <ul className="text-sm font-medium flex-1">
+            <hr className="my-2" />
+
               <li>
-                <Menu items={nestedNav} text="Elementos">
+                <Menu items={nestedNav} text="Ejercicios">
                   <FaPuzzlePiece />
                 </Menu>
                 <Menu items={nestedNavEdad} text="Categorias">
                   <FaUsers />
                 </Menu>
-                <Menu items={nestedNavCompeticion} text="Puntuación">
+                <hr className="my-2" />
+                <Menu items={nestedNavCompeticion} text="Puntuación individual">
                   <FaTrophy />
                 </Menu>
+
+                <Menu items={nestedNavCompeticionGrupal} text="Puntuación grupal">
+                  <FaTrophy />
+                </Menu>
+                <hr className="my-2" />
+
               </li>
             </ul>
           </div>

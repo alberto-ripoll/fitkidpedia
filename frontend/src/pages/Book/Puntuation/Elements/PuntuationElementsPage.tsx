@@ -2,7 +2,7 @@ import { useState } from "react";
 import { GiFemale, GiMale } from "react-icons/gi";
 import Tabla from "../../../../components/Table/Tabla";
 
-const valoresElementos = [
+const valoresEjercicios = [
   { elemento: "A", valor: "0.1" },
   { elemento: "B", valor: "0.2" },
   { elemento: "C", valor: "0.3" },
@@ -37,7 +37,7 @@ const PuntuationElementsPage = () => {
     : valoresMaximosCategoriaFemenina;
 
   return (
-    <div className="bg-white shadow overflow-hidden sm:rounded-lg flex flex-col w-full p-12 m-2">
+    <div className="bg-white flex flex-col">
       <p className="text-lg text-gray-700 font-light px-4 py-2 leading-relaxed bg-gray-50 shadow-md rounded-md">
         Cada juez registra el número de elementos ejecutados (identificados de A
         a H) en su hoja de puntuación.
