@@ -2,8 +2,6 @@
 /backend/.env
 /backend/dist
 
-/backend/frontend/node_modules
-/backend/frontend/dist
 /backend/.phpunit.cache
 /backend/node_modules
 /backend/public/build
