@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
-import MenuLateral from "../../../components/Menu";
 import SearchBar from "../../../components/SearchBar";
-import SelectCategories from "../../../components/SelectCategories";
 import ExerciseCard from "../Exercises/components/ExerciseCard";
-import SelectNiveles from "../../../components/ComplexSelect";
-import ComplexSelect from "../../../components/ComplexSelect";
 import { ElementsService } from "./service/ElementsService";
 
 function ElementsPage({ category = "" }: { category: string }) {
@@ -24,9 +20,7 @@ function ElementsPage({ category = "" }: { category: string }) {
 
   useEffect(() => {
     fetchData();
-  },[category]);
-
- 
+  }, [category]);
 
 
   return (

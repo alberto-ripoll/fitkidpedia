@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 import SidebarItemComponent from "./SidebarItemComponent";
 
 const items = [
@@ -44,7 +42,7 @@ function Sidebar({ active }: SidebarProps) {
     <aside className="min-w-64 border-r border-gray-200 h-screen bg-white shadow-lg">
       <div className="overflow-y-auto py-4 px-3 rounded h-screen ">
         <ul className="space-y-1">
-          {items.map((item, index) => (
+          {items.map((item) => (
             <>
               <SidebarItemComponent item={item} active={active} />
               <hr className="my-2" />

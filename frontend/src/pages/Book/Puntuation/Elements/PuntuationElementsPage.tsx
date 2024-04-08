@@ -2,16 +2,6 @@ import { useState } from "react";
 import { GiFemale, GiMale } from "react-icons/gi";
 import Tabla from "../../../../components/Table/Tabla";
 
-const valoresEjercicios = [
-  { elemento: "A", valor: "0.1" },
-  { elemento: "B", valor: "0.2" },
-  { elemento: "C", valor: "0.3" },
-  { elemento: "D", valor: "0.4" },
-  { elemento: "E", valor: "0.5" },
-  { elemento: "F", valor: "0.6" },
-  { elemento: "G", valor: "0.7" },
-  { elemento: "H", valor: "0.8" },
-];
 
 const valoresMaximosCategoria = [
   ["A", "4"],
@@ -70,22 +60,18 @@ const PuntuationElementsPage = () => {
           <div className="flex justify-around mb-4">
             <button
               onClick={handleToggleCategories}
-              className={`flex items-center bg-${
-                showMaleCategories ? "gray" : "pink"
-              }-500 hover:bg-${
-                showMaleCategories ? "gray" : "pink"
-              }-700 text-white font-bold py-2 px-4 rounded`}
+              className={`flex items-center bg-${showMaleCategories ? "gray" : "pink"
+                }-500 hover:bg-${showMaleCategories ? "gray" : "pink"
+                }-700 text-white font-bold py-2 px-4 rounded`}
             >
               <GiFemale className="mr-2" />
               Femenino
             </button>
             <button
               onClick={handleToggleCategories}
-              className={`flex items-center bg-${
-                showMaleCategories ? "blue" : "gray"
-              }-500 hover:bg-${
-                showMaleCategories ? "blue" : "gray"
-              }-700 text-white font-bold py-2 px-4 rounded`}
+              className={`flex items-center bg-${showMaleCategories ? "blue" : "gray"
+                }-500 hover:bg-${showMaleCategories ? "blue" : "gray"
+                }-700 text-white font-bold py-2 px-4 rounded`}
             >
               <GiMale className="mr-2" />
               Masculino

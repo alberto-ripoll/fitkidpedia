@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -26,7 +25,7 @@ const categories = [
 
 const Categories = () => {
   let navigate = useNavigate();
-  
+
   return (
     // Cambiado a dos columnas en md y tres en lg
     <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-4 p-4">

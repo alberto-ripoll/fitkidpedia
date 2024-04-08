@@ -1,11 +1,9 @@
 import "./App.css";
 import Footer from "./components/Footer";
-import NavBar from "./components/NavBar";
 import Header from "./components/Header";
 import ExercisePage from "./pages/Book/Exercises/ExercisePage";
 import HomePage from "./pages/Home/HomePage";
 import {
-  BrowserRouter,
   Navigate,
   Route,
   Routes,
@@ -23,7 +21,7 @@ import PuntuationArtisticPage from "./pages/Book/Puntuation/Artistic/PuntuationA
 import BigFreePuntuationPage from "./pages/Book/GroupPuntuation/BigFree/BigFreePuntuationPage";
 
 function App() {
-  const [isMenuOpen, setIsMenuOpen] = useState(true); 
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const location = useLocation();
@@ -31,11 +29,11 @@ function App() {
     window.scrollTo(0, 0);
   }, [location]);
   return (
-      <div className="App overflow-hidden h-screen">
-        <Header toggleMenu={toggleMenu} />
-        <section className="mt-16 flex flex-row h-full">
-          <MenuLateral isMenuOpen={isMenuOpen} />
-          <div className={`bg-white shadow w-full overflow-y-auto ${location.pathname !== '/' ? 'mb-20 sm:rounded-lg' : 'mb-12'} h-auto sm:h-full` }>
+    <div className="App overflow-hidden h-screen">
+      <Header toggleMenu={toggleMenu} />
+      <section className="mt-16 flex flex-row h-full">
+        <MenuLateral isMenuOpen={isMenuOpen} />
+        <div className={`bg-white shadow w-full overflow-y-auto ${location.pathname !== '/' ? 'mb-20 sm:rounded-lg' : 'mb-12'} h-auto sm:h-full`}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/elementos/" element={<Navigate to="/elementos/fuerza" />} />
@@ -63,12 +61,12 @@ function App() {
             <Route path="/puntuacion-grupal/big-free" element={<BigFreePuntuationPage />} />
 
           </Routes>
-          </div>
- 
+        </div>
 
-        </section>
-        <Footer />
-      </div>
+
+      </section>
+      <Footer />
+    </div>
   );
 }
 

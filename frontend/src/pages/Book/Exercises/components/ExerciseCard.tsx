@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 interface ExerciseCardProps {
@@ -24,7 +23,7 @@ function ExerciseCard({ id, ruta, dificultad, imageUrl, name }: ExerciseCardProp
   const getBackgroundColor = (dificultad: string) => difficultyColors[dificultad] || 'bg-gray-500';
 
   return (
-      <div key={id} className="relative cursor-pointer sm:min-w-32 md:min-w-56 lg:min-w-48 xl:min-w-64 w-full shadow-md" onClick={() => navigate(ruta)}>
+    <div key={id} className="relative cursor-pointer sm:min-w-32 md:min-w-56 lg:min-w-48 xl:min-w-64 w-full shadow-md" onClick={() => navigate(ruta)}>
       <img src={imageUrl} alt={name} className="w-full h-full object-cover" />
       <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 w-full h-full p-4 flex items-end">
         <h5 className="text-white text-xl">{name}</h5>
