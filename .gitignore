@@ -1,42 +1,10 @@
-./node_modules
-/backend/.env
+node_modules
+.env
+frontend/dist
 /backend/dist
 
-/backend/frontend/node_modules
-/backend/frontend/dist
-/backend/.phpunit.cache
-/backend/node_modules
-/backend/public/build
-/backend/public/hot
-/backend/public/storage
-/backend/storage/*.key
-/backend/vendor
-/backend/.env
-/backend/.env.backup
-/backend/.env.production
-/backend/.phpunit.result.cache
-/backend/Homestead.json
-/backend/Homestead.yaml
-/backend/auth.json
-/backend/npm-debug.log
-/backend/yarn-error.log
-/backend//.fleet
-/backend//.idea
-/backend//.vscode
+/vendor
 
-/frontend/node_modules
-/frontend/.pnp
-/frontend.pnp.js
-/frontend/coverage
-/frontend/build
-/frontend/.DS_Store
-/frontend/.env
-/frontend/.env.development.local
-/frontend/.env.test.local
-/frontend/.env.production.local
-/frontend/npm-debug.log*
-/frontend/yarn-debug.log*
-/frontend/yarn-error.log*
 
 .DS_Store
 /data
