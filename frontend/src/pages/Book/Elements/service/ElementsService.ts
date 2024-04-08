@@ -1,18 +1,19 @@
-import axios from "axios";
+import axiosClient from "../../../../lib/axios-client";
 
 export class ElementsService {
   async getElement(id: string): Promise<any> {
-    let elemento = await axios.get("http://localhost:8000/api/elemento/" + id);
+
+    let elemento = await axiosClient.get("/elemento/" + id);
     return elemento.data.data;
   }
 
   async getElementsByCategory(category: string): Promise<any> {
-    let elementos = await axios.get(`http://localhost:8000/api/elementos/${category}`);
+    let elementos = await axiosClient.get(`/elementos/${category}`);
     return elementos.data.data;
   }
 
   async getRelatedElements(id: string): Promise<any> {
-    let elementos = await axios.get(`http://localhost:8000/api/elementos-relacionados/${id}`);
+    let elementos = await axiosClient.get(`/elementos-relacionados/${id}`);
     return elementos.data.data;
   }
 
