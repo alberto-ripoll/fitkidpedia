@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MenuItem from "./Menu/MenuItem";
 import { FaPuzzlePiece, FaTrophy, FaUsers } from "react-icons/fa";
 import Footer from "./Footer";
@@ -40,6 +40,10 @@ const Header = () => {
     location.pathname !== "/elementos/nuevo-elemento" &&
     location.pathname !== "/elementos/editar-elemento" &&
     location.pathname !== "/puntuacion/elementos";
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location]);
 
   return (
     <nav className="bg-white fixed w-full top-0 z-50 border-y">
@@ -94,32 +98,30 @@ const Header = () => {
           </span>
         </Link>
       )}
-        <div 
+      <div 
         className={`${
           isMenuOpen ? "absolute top-full left-0 right-0 bg-white shadow-md mt-2 overflow-hidden transition-all duration-300 h-screen" : "hidden"
         } lg:hidden md:hidden`}
-    
-        >
-          <ul className="py-2 transform origin-top">
-            <li className="py-2 px-4">
+      >
+        <ul className="py-2 transform origin-top">
+          <li className="py-2 px-4">
             <MenuItem items={nestedNav} text="Ejercicios">
-                  <FaPuzzlePiece />
-                </MenuItem>
-                <MenuItem items={nestedNavEdad} text="Categorias">
-                  <FaUsers />
-                </MenuItem>
-                <hr className="my-2" />
-                <MenuItem items={nestedNavCompeticion} text="Puntuación individual">
-                  <FaTrophy />
-                </MenuItem>
-                <MenuItem items={nestedNavCompeticionGrupal} text="Puntuación grupal">
-                  <FaTrophy />
-                </MenuItem>
-    
-            </li>
-          </ul>
-          <Footer />
-        </div>
+              <FaPuzzlePiece />
+            </MenuItem>
+            <MenuItem items={nestedNavEdad} text="Categorias">
+              <FaUsers />
+            </MenuItem>
+            <hr className="my-2" />
+            <MenuItem items={nestedNavCompeticion} text="Puntuación individual">
+              <FaTrophy />
+            </MenuItem>
+            <MenuItem items={nestedNavCompeticionGrupal} text="Puntuación grupal">
+              <FaTrophy />
+            </MenuItem>
+          </li>
+        </ul>
+        <Footer />
+      </div>
     </nav>
   );
 };
