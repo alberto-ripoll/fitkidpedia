@@ -49,7 +49,7 @@ function ExercisePage() {
   return (
     <>
       {element && ( // Verificamos si element es nulo antes de intentar renderizar el componente
-        <section className="flex md:flex-col lg:flex-row py-10 h-auto mb-24 px-8 gap-2 w-full">
+        <section className="flex sm:flex-col md:flex-col lg:flex-row py-10 h-auto mb-24 px-8 gap-2 w-full flex-col">
 
           <div className="h-full lg:w-2/3 p-4 flex flex-col justify-around gap-3">
             <ExerciseVideo videoUrl={element.video} />

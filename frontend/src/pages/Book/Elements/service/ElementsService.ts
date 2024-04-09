@@ -3,7 +3,7 @@ import axiosClient from "../../../../lib/axios-client";
 export class ElementsService {
   async getElement(id: string): Promise<any> {
 
-    let elemento = await axiosClient.get("/elemento/" + id);
+    let elemento = await axiosClient.get("/elementos/elemento/" + id);
     return elemento.data.data;
   }
 
@@ -13,7 +13,7 @@ export class ElementsService {
   }
 
   async getRelatedElements(id: string): Promise<any> {
-    let elementos = await axiosClient.get(`/elementos-relacionados/${id}`);
+    let elementos = await axiosClient.get(`/elementos/relacionados/${id}`);
     return elementos.data.data;
   }
 

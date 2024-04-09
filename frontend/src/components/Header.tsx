@@ -1,13 +1,52 @@
 import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
+import MenuItem from "./Menu/MenuItem";
+import { FaPuzzlePiece, FaTrophy, FaUsers } from "react-icons/fa";
+import Footer from "./Footer";
 
-const Header = ({ toggleMenu }: any) => {
+const nestedNav = [
+  { name: "Flexibilidad", href: "/elementos/flexibilidad", icon: "" },
+  { name: "Salto", href: "/elementos/salto", icon: "" },
+  { name: "Acrobacias", href: "/elementos/acrobacias", icon: "" },
+  { name: "Fuerza", href: "/elementos/fuerza", icon: "" },
+];
+
+const nestedNavEdad = [
+  { name: "Individual", href: "/categorias/individual", icon: "" },
+  { name: "Duo", href: "/categorias/duo", icon: "" },
+  { name: "Small", href: "/categorias/small", icon: "" },
+  { name: "Big", href: "/categorias/big", icon: "" },
+  { name: "Big Free", href: "/categorias/big-free", icon: "" },
+];
+const nestedNavCompeticion = [
+  { name: "Ejercicios", href: "/puntuacion/ejercicios", icon: "" },
+  { name: "Técnica", href: "/puntuacion/tecnica", icon: "" },
+  { name: "Artístico", href: "/puntuacion/artistico", icon: "" },
+  { name: "Total", href: "/puntuacion/total", icon: "" },
+];
+const nestedNavCompeticionGrupal = [
+  { name: "Duo, Small y Big", href: "/puntuacion-grupal/grupos", icon: "" },
+  { name: "Big Free", href: "/puntuacion-grupal/big-free", icon: "" },
+];
+
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   const location = useLocation(); // Obtiene la información de la ruta actual
   // Función para verificar si la ruta actual incluye '/elemento'
-  const shouldShowAddButton = location.pathname.includes("/elemento") && location.pathname !== "/elementos/nuevo-elemento" && location.pathname !== "/elementos/editar-elemento" && location.pathname !== "/puntuacion/elementos";
+  const shouldShowAddButton =
+    location.pathname.includes("/elemento") &&
+    location.pathname !== "/elementos/nuevo-elemento" &&
+    location.pathname !== "/elementos/editar-elemento" &&
+    location.pathname !== "/puntuacion/elementos";
 
   return (
     <nav className="bg-white fixed w-full top-0 z-50 border-y">
-      <button onClick={toggleMenu} className="absolute left-4 top-4 lg:hidden">
+      <button
+        onClick={toggleMenu}
+        className="absolute left-4 top-4 lg:hidden md:hidden sm:block"
+      >
         <svg
           className="w-6 h-6"
           fill="none"
@@ -26,7 +65,7 @@ const Header = ({ toggleMenu }: any) => {
       <div className="flex justify-center items-center h-full w-full">
         <Link to="/" className="flex justify-center items-center py-4">
           <span className="font-semibold text-gray-500 text-lg">
-            FITKID BOOK
+            FITKIDPEDIA
           </span>
         </Link>
       </div>
@@ -55,6 +94,32 @@ const Header = ({ toggleMenu }: any) => {
           </span>
         </Link>
       )}
+        <div 
+        className={`${
+          isMenuOpen ? "absolute top-full left-0 right-0 bg-white shadow-md mt-2 overflow-hidden transition-all duration-300 h-screen" : "hidden"
+        } lg:hidden md:hidden`}
+    
+        >
+          <ul className="py-2 transform origin-top">
+            <li className="py-2 px-4">
+            <MenuItem items={nestedNav} text="Ejercicios">
+                  <FaPuzzlePiece />
+                </MenuItem>
+                <MenuItem items={nestedNavEdad} text="Categorias">
+                  <FaUsers />
+                </MenuItem>
+                <hr className="my-2" />
+                <MenuItem items={nestedNavCompeticion} text="Puntuación individual">
+                  <FaTrophy />
+                </MenuItem>
+                <MenuItem items={nestedNavCompeticionGrupal} text="Puntuación grupal">
+                  <FaTrophy />
+                </MenuItem>
+    
+            </li>
+          </ul>
+          <Footer />
+        </div>
     </nav>
   );
 };

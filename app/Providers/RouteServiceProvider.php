@@ -15,6 +15,8 @@ use Src\Auth\Infrastructure\Web\AuthRoutes;
 // use Src\Administracion\Usuarios\Shared\Infrastructure\Web\UsuariosRoutes;
 // use Src\Shared\Usuarios\Deportistas\Infrastructure\Web\DeportistasRoutes;
 use Src\Context\Shared\Infrastructure\Web\ContextRoutes;
+use Src\Elements\Shared\Infrastructure\Web\ElementsRoutes;
+use Src\Elements\Shared\Infrastructure\Web\ElementsController;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 // use Src\Administracion\Clientes\Mensualidades\Infrastructure\Web\MensualidadesRoutes;
@@ -41,10 +43,8 @@ class RouteServiceProvider extends ServiceProvider
         });
 
         Route::middleware(['api'])->group(function () {
-            /** Login */
             AuthRoutes::configure();
-            /** ClasesRoutes */
-            ContextRoutes::configure();
+            ElementsRoutes::configure();
         });
 
         //Otras rutas

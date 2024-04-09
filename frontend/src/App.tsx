@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 import ElementsPage from "./pages/Book/Elements/ElementsPage";
 import CategoriesPage from "./pages/Book/Categories/CategoriesPage";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import MenuLateral from "./components/Menu";
 import NewElementsPage from "./pages/Book/Elements/NewElementsPage";
 import TotalPuntuationPage from "./pages/Book/Puntuation/Total/TotalPuntuationPage";
@@ -21,8 +21,6 @@ import PuntuationArtisticPage from "./pages/Book/Puntuation/Artistic/PuntuationA
 import BigFreePuntuationPage from "./pages/Book/GroupPuntuation/BigFree/BigFreePuntuationPage";
 
 function App() {
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const location = useLocation();
   useEffect(() => {
@@ -30,10 +28,10 @@ function App() {
   }, [location]);
   return (
     <div className="App overflow-hidden h-screen">
-      <Header toggleMenu={toggleMenu} />
-      <section className="mt-16 flex flex-row h-full">
-        <MenuLateral isMenuOpen={isMenuOpen} />
-        <div className={`bg-white shadow w-full overflow-y-auto ${location.pathname !== '/' ? 'mb-20 sm:rounded-lg' : 'mb-12'} h-auto sm:h-full`}>
+      {location.pathname !== '/' && <Header />}
+      <section className="flex flex-row h-full">
+        <MenuLateral />
+        <div className={`bg-white shadow w-full overflow-y-auto ${location.pathname !== '/' ? 'mt-16 sm:rounded-lg px-8' : ''} h-auto sm:h-full`}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/elementos/" element={<Navigate to="/elementos/fuerza" />} />
@@ -65,7 +63,6 @@ function App() {
 
 
       </section>
-      <Footer />
     </div>
   );
 }
