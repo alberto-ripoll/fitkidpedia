@@ -31,7 +31,7 @@ function App() {
   }, [location]);
   return (
     <div className="App overflow-hidden h-screen">
-      {location.pathname !== '/' &&       <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />}
+      {location.pathname !== '/' && <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />}
       <section className={`flex flex-row h-full`}>
         <MenuLateral />
         {isMenuOpen && <div className="absolute inset-0 bg-black opacity-50 z-10"></div>}
@@ -67,7 +67,7 @@ function App() {
 
 
       </section>
-      {location.pathname == '/' &&  <Footer />}
+      {location.pathname == '/' && <Footer />}
     </div>
   );
 }

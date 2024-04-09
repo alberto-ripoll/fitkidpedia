@@ -1,7 +1,6 @@
 import {  useLocation } from "react-router-dom";
 import { FaPuzzlePiece, FaTrophy, FaUsers } from "react-icons/fa";
 import MenuItem from "./Menu/MenuItem";
-import Footer from "./Footer";
 import SearchBar from "./SearchBar";
 
 

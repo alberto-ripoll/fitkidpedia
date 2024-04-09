@@ -26,11 +26,10 @@ const IndividualTable = () => {
   const [showMaleCategories, setShowMaleCategories] = useState(false);
 
   const handleToggleCategories = () => {
-    setShowMaleCategories((prev) => !prev);
+    setShowMaleCategories(!showMaleCategories);
   };
 
   const categoriesToShow = showMaleCategories ? categoriasMasculinas : categorias;
-
   return (
     <div className="overflow-x-auto relative w-3/4 mx-auto my-8 bg-gray-50 p-4 shadow-md rounded-md">
       <div className="flex justify-around mb-4">
