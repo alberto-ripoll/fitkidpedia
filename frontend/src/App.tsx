@@ -1,5 +1,4 @@
 import "./App.css";
-import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ExercisePage from "./pages/Book/Exercises/ExercisePage";
 import HomePage from "./pages/Home/HomePage";
