@@ -2,6 +2,7 @@ import {  useLocation } from "react-router-dom";
 import { FaPuzzlePiece, FaTrophy, FaUsers } from "react-icons/fa";
 import MenuItem from "./Menu/MenuItem";
 import Footer from "./Footer";
+import SearchBar from "./SearchBar";
 
 
 const MenuLateral = () => {
@@ -41,9 +42,9 @@ const MenuLateral = () => {
 
     //por defecto en desktop
     //lg:block pb:40
-    <div className="lg:block md:block sm:hidden pb-40 hidden">
-      <nav className="my-2 top-0 left-0 w-full h-full bg-white space-y-8 md:w-60 lg:w-80 sm:w-full border-r overflow-y-auto">
-        <h1 className="text-2xl font-bold px-4">FITKIDPEDIA</h1>
+    <div className="lg:block md:block sm:hidden pt-16 pb-40 hidden max-h-[80vh]">
+      <nav className="my-2 top-0 left-0 w-full bg-white space-y-8 md:w-60 lg:w-80 sm:w-full border-r overflow-y-auto">
+        <SearchBar />
         <div className="flex flex-col h-full px-4">
           <div className="overflow-auto">
             <ul className="text-sm font-medium flex-1">
@@ -68,7 +69,6 @@ const MenuLateral = () => {
           </div>
         </div>
       </nav>
-        <Footer />
     </div>
   );
 };

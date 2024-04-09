@@ -11,7 +11,7 @@ interface MenuProps {
   const MenuItem = (props: MenuProps) => {
     const location = useLocation();
     const { children, items, text } = props;
-    const [isOpened, setIsOpened] = useState(true);
+    const [isOpened, setIsOpened] = useState(false);
   
     return (
       <div>

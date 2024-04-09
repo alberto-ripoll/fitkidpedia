@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 import ElementsPage from "./pages/Book/Elements/ElementsPage";
 import CategoriesPage from "./pages/Book/Categories/CategoriesPage";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import MenuLateral from "./components/Menu";
 import NewElementsPage from "./pages/Book/Elements/NewElementsPage";
 import TotalPuntuationPage from "./pages/Book/Puntuation/Total/TotalPuntuationPage";
@@ -18,18 +18,23 @@ import PuntuationElementsPage from "./pages/Book/Puntuation/Elements/PuntuationE
 import PuntuationTechniquePage from "./pages/Book/Puntuation/Techinque/PuntuationTechniquePage";
 import PuntuationArtisticPage from "./pages/Book/Puntuation/Artistic/PuntuationArtisticPage";
 import BigFreePuntuationPage from "./pages/Book/GroupPuntuation/BigFree/BigFreePuntuationPage";
+import Footer from "./components/Footer";
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
+    setIsMenuOpen(false);
   }, [location]);
   return (
     <div className="App overflow-hidden h-screen">
-      {location.pathname !== '/' && <Header />}
-      <section className="flex flex-row h-full">
+      {location.pathname !== '/' &&       <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />}
+      <section className={`flex flex-row h-full`}>
         <MenuLateral />
+        {isMenuOpen && <div className="absolute inset-0 bg-black opacity-50 z-10"></div>}
         <div className={`bg-white shadow w-full overflow-y-auto ${location.pathname !== '/' ? 'mt-16 sm:rounded-lg px-8' : ''} h-auto sm:h-full`}>
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -62,6 +67,7 @@ function App() {
 
 
       </section>
+      {location.pathname == '/' &&  <Footer />}
     </div>
   );
 }

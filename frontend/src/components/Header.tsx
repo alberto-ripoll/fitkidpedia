@@ -1,8 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
 import MenuItem from "./Menu/MenuItem";
 import { FaPuzzlePiece, FaTrophy, FaUsers } from "react-icons/fa";
-import Footer from "./Footer";
 
 const nestedNav = [
   { name: "Flexibilidad", href: "/elementos/flexibilidad", icon: "" },
@@ -29,21 +27,20 @@ const nestedNavCompeticionGrupal = [
   { name: "Big Free", href: "/puntuacion-grupal/big-free", icon: "" },
 ];
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+interface HeaderProps {
+  isMenuOpen: boolean;
+  toggleMenu: () => void;
+}
 
+const Header = ({ isMenuOpen, toggleMenu } : HeaderProps) => {
   const location = useLocation(); // Obtiene la información de la ruta actual
-  // Función para verificar si la ruta actual incluye '/elemento'
   const shouldShowAddButton =
     location.pathname.includes("/elemento") &&
     location.pathname !== "/elementos/nuevo-elemento" &&
     location.pathname !== "/elementos/editar-elemento" &&
     location.pathname !== "/puntuacion/elementos";
 
-  useEffect(() => {
-    setIsMenuOpen(false);
-  }, [location]);
+
 
   return (
     <nav className="bg-white fixed w-full top-0 z-50 border-y">
@@ -100,7 +97,7 @@ const Header = () => {
       )}
       <div 
         className={`${
-          isMenuOpen ? "absolute top-full left-0 right-0 bg-white shadow-md mt-2 overflow-hidden transition-all duration-300 h-screen" : "hidden"
+          isMenuOpen ? "border-y absolute top-12 left-0 right-0 bg-white shadow-md mt-2 overflow-y-auto transition-all duration-300 max-h-[80vh]" : "hidden"
         } lg:hidden md:hidden`}
       >
         <ul className="py-2 transform origin-top">
@@ -120,7 +117,6 @@ const Header = () => {
             </MenuItem>
           </li>
         </ul>
-        <Footer />
       </div>
     </nav>
   );
