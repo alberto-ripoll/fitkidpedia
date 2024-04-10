@@ -28,6 +28,11 @@ const PuntuationElementsPage = () => {
 
   return (
     <div className="bg-white flex flex-col">
+      <h1 className="text-4xl font-bold text-center mt-10 text-gray-800">
+        Puntuación Individual | Ejercicios
+      </h1>
+      <hr className="my-8" />
+
       <p className="text-lg text-gray-700 font-light px-4 py-2 leading-relaxed bg-gray-50 shadow-md rounded-md">
         Cada juez registra el número de elementos ejecutados (identificados de A
         a H) en su hoja de puntuación.
@@ -41,7 +46,7 @@ const PuntuationElementsPage = () => {
         Esto permite comparar y evaluar de manera imparcial la calidad de las
         rutinas de los competidores.
       </p>
-      <section className="flex divide-x gap-8 w-full">
+      <section className="flex divide-x gap-8 w-full md:flex-row flex-col">
         <Tabla
           cabeceras={["DIFICULTAD", "PUNTOS"]}
           filas={[
@@ -60,9 +65,7 @@ const PuntuationElementsPage = () => {
           <div className="flex justify-around mb-4">
             <button
               onClick={handleToggleCategories}
-              className={`flex items-center bg-${showMaleCategories ? "gray" : "pink"
-                }-500 hover:bg-${showMaleCategories ? "gray" : "pink"
-                }-700 text-white font-bold py-2 px-4 rounded`}
+              className={`flex items-center ${showMaleCategories ? "bg-gray-500 hover:bg-gray-700" : "bg-pink-500 hover:bg-pink-700"} text-white font-bold py-2 px-4 rounded`}
             >
               <GiFemale className="mr-2" />
               Femenino

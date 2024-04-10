@@ -6,10 +6,9 @@ const TotalPuntuationPage = () => {
   return (
     <div className="bg-white flex flex-col">
   
-      <p className="text-lg text-gray-700 font-light px-4 py-2 leading-relaxed bg-gray-50 shadow-md rounded-md">
-        {" "}
-        Se valorara...
-      </p>
+  <h1 className="text-4xl font-bold text-center mt-10 text-gray-800">
+        Puntuación Individual | Total
+      </h1>
   
       <section className="flex divide-x gap-8 w-full">
         <Tabla

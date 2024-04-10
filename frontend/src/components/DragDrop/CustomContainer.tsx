@@ -163,7 +163,7 @@ export function CustomDragDrop({
       <div
         className={`${dragging
           ? "border border-[#2B92EC] bg-[#EDF2FF]"
-          : "border-dashed border-[#e0e0e0]"
+          : "border-dashed border-[rgb(224,224,224)]"
           } flex items-center justify-center mx-auto text-center border-2 rounded-md mt-4 py-24`}
         ref={dropContainer}
       >

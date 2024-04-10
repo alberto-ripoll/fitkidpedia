@@ -7,7 +7,7 @@ use Src\Shared\Core\Routes\ApiBaseRoutes;
 
 class ElementsRoutes extends ApiBaseRoutes
 {
-    protected static string $prefix = '/api/elementos';
+    protected static string $prefix = '/api/ejercicios';
 
     public static function configure(): void
     {

@@ -75,7 +75,7 @@ function ExercisePage() {
                 <ExerciseRelated
                   dificultad={element.difficulty}
                   id={element.id}
-                  ruta={`/elementos/${element.category}/${element.id}`}
+                  ruta={`/ejercicios/${element.category}/${element.id}`}
                   imageUrl={element.imageUrl}
                   name={element.name}
                 />

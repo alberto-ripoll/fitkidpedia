@@ -19,6 +19,9 @@ import PuntuationTechniquePage from "./pages/Book/Puntuation/Techinque/Puntuatio
 import PuntuationArtisticPage from "./pages/Book/Puntuation/Artistic/PuntuationArtisticPage";
 import BigFreePuntuationPage from "./pages/Book/GroupPuntuation/BigFree/BigFreePuntuationPage";
 import Footer from "./components/Footer";
+import WhatIsFitkidPage from "./pages/Book/Introduction/WhatIsFitKid/WhatIsFitkidPage";
+import FitKidChoreographyPage from "./pages/Book/Introduction/FitKidChoreography/FitKidChoreographyPage";
+import FaqPage from "./pages/Book/Faq/FaqPage";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,23 +33,29 @@ function App() {
     setIsMenuOpen(false);
   }, [location]);
   return (
-    <div className="App overflow-hidden h-screen">
-      {location.pathname !== '/' && <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />}
+    <div className="App">
+      <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
       <section className={`flex flex-row h-full`}>
         <MenuLateral />
         {isMenuOpen && <div className="absolute inset-0 bg-black opacity-50 z-10"></div>}
-        <div className={`bg-white shadow w-full overflow-y-auto ${location.pathname !== '/' ? 'mt-16 sm:rounded-lg px-8' : ''} h-auto sm:h-full`}>
+        <div className={`${location.pathname !== '/' ? 'mt-16' : ''} h-auto w-full`}>
+        {/* <div className={${location.pathname} `mt-16 w-full`}> */}
+
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/elementos/" element={<Navigate to="/elementos/fuerza" />} />
-            <Route path="/elementos/nuevo-elemento" element={<NewElementsPage />} />
-            <Route path="/elementos/fuerza" element={<ElementsPage category="fuerza" />} />
-            <Route path="/elementos/flexibilidad" element={<ElementsPage category="flexibilidad" />} />
-            <Route path="/elementos/acrobacias" element={<ElementsPage category="acrobacias" />} />
-            <Route path="/elementos/salto" element={<ElementsPage category="salto" />} />
+
+            <Route path="/introduccion/que-es-fitkid" element={<WhatIsFitkidPage />} />
+            <Route path="/introduccion/que-incluye-coreografia-fitkid" element={<FitKidChoreographyPage />} />
+
+            <Route path="/ejercicios/" element={<Navigate to="/ejercicios/fuerza" />} />
+            <Route path="/ejercicios/nuevo-elemento" element={<NewElementsPage />} />
+            <Route path="/ejercicios/fuerza" element={<ElementsPage category="fuerza" />} />
+            <Route path="/ejercicios/flexibilidad" element={<ElementsPage category="flexibilidad" />} />
+            <Route path="/ejercicios/acrobacias" element={<ElementsPage category="acrobacias" />} />
+            <Route path="/ejercicios/salto" element={<ElementsPage category="salto" />} />
 
             <Route
-              path="/elementos/:category/:exercise"
+              path="/ejercicios/:category/:exercise"
               element={<ExercisePage />}
             />
             <Route path="/categorias/individual" element={<CategoriesPage categoria="individual" />} />
@@ -62,6 +71,7 @@ function App() {
 
             <Route path="/puntuacion-grupal/big-free" element={<BigFreePuntuationPage />} />
 
+            <Route path="faq" element={<FaqPage />} />
           </Routes>
         </div>
 

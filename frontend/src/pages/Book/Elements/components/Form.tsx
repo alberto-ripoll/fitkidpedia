@@ -1,5 +1,5 @@
 import SelectCategories from "../../../../components/SelectCategories";
-// import SelectNivel from "../../../../components/SelectNivel";
+import SelectNivel from "../../../../components/SelectNivel";
 
 const Formulario = ({ handleInputChange, isFormReady }: any) => {
 
@@ -22,7 +22,7 @@ const Formulario = ({ handleInputChange, isFormReady }: any) => {
               placeholder="Flick Flack"
             />
             {!isFormReady && <p className="text-red-500 text-xs italic">
-              Introduce el nombre del elemento.
+              Introduce el nombre del ejercicio.
             </p>}
 
           </div>
@@ -42,13 +42,13 @@ const Formulario = ({ handleInputChange, isFormReady }: any) => {
             />
           </div>
         </div>
-        <div className="flex flex-wrap -mx-3 mb-2">
+        <div className="flex flex-wrap mx-3 mb-2">
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
               htmlFor="grid-state"
             >
-              Elemento
+              Tipo
             </label>
             <SelectCategories onCategoryChange={() => { }} />
           </div>
@@ -59,7 +59,7 @@ const Formulario = ({ handleInputChange, isFormReady }: any) => {
             >
               Dificultad
             </label>
-            {/* <SelectNivel onCategoryChange={() => { }} /> */}
+            <SelectNivel onCategoryChange={() => { }} />
           </div>
         </div>
       </form>

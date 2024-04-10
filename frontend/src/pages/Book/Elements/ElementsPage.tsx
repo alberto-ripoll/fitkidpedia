@@ -30,21 +30,17 @@ function ElementsPage({ category = "" }: { category: string }) {
           <h1 className="text-4xl font-bold text-black mt-10 text-center">
             Ejercicios de {category}{" "}
           </h1>
+        <hr className="my-8" />
           <SearchBar />
-          <div className="flex justify-center mb-8"></div>
-
-          {/* <section className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 max-[1400px]:grid-cols-3 min-[1200px]:grid-cols-4 lg:grid-cols-4 gap-10 justify-center w-full"> */}
-          <section className="grid gap-10 justify-center w-full max-[1500px]:grid-cols-3 min-[1200px]:grid-cols-4">
+          <section className="grid gap-8 w-full lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
             {elements.map((element: any) => (
-              <div key={element.id} className="w-full sm:w-full md:w-1/2 lg:w-1/4">
                 <ExerciseCard
                   id={element.id}
                   dificultad={element.difficulty}
-                  ruta={`/elementos/${element.category}/${element.name.replace(/\s/g, "-").toLowerCase()}`}
+                  ruta={`/ejercicios/${element.category.toLowerCase()}/${element.name.replace(/\s/g, "-").toLowerCase()}`}
                   imageUrl={element.imageUrl}
                   name={element.name}
                 />
-              </div>
             ))}
           </section>
 

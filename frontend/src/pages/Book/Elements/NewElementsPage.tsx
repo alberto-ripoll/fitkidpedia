@@ -15,8 +15,11 @@ const NewElementsPage = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center w-full gap-8">
-        <section className="flex flex-row w-full justify-evenly gap-20">
+      <div className="flex flex-col items-center w-5/6 gap-8 mx-8 mt-8 mb-8">
+        <h1 className="text-3xl font-bold">Nuevo Ejercicio</h1>
+        <hr className="w-full border-gray-300" />
+
+        <section className="flex xl:flex-row lg:flex-col md:flex-col sm:flex-col flex-col w-full justify-evenly gap-20">
 
           <Formulario isFormReady={isFormReady} handleInputChange={handleInputChange} />
           <DragComponent />
@@ -27,7 +30,7 @@ const NewElementsPage = () => {
 
           type="button"
         >
-          Subir Elemento
+          Subir Ejercicio
         </button>
       </div>
     </>

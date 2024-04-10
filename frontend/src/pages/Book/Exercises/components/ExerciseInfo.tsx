@@ -31,7 +31,7 @@ function ExerciseInfo({
           </a>
           <h2 className="text-lg text-gray-600 font-bold ml-10">Tipo</h2>
           <a
-            href={"/elementos/" + tipo}
+            href={"/ejercicios/" + tipo.toLowerCase()}
             className="text-lg text-blue-500 hover:text-blue-700 ml-10"
           >
             {tipo}

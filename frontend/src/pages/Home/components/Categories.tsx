@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const categories = [
   {
     id: 1,
-    ruta: '/elementos',
+    ruta: '/ejercicios',
     name: 'Ejercicios',
     imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYPB0US8bMwBcrJ3lbsdfQSXgMNxLeoPGeehlUqrk90A&s',
   },
@@ -16,7 +16,7 @@ const categories = [
   },
   {
     id: 2,
-    ruta: '/puntuacion/elementos',
+    ruta: '/puntuacion/ejercicios',
     name: 'Puntuación',
     imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYPB0US8bMwBcrJ3lbsdfQSXgMNxLeoPGeehlUqrk90A&s',
   },

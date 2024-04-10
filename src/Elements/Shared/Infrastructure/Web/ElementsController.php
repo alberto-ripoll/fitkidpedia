@@ -12,10 +12,10 @@ class ElementsController extends Controller
         return ApiResponse::json([
             [
                 'id' => 1,
-                'name' => 'Mastepanova',
-                'category' => 'Flexiblidad',
+                'name' => 'Straddle planche',
+                'category' => 'Fuerza',
                 'difficulty' => 'A',
-                'imageUrl' => 'https://via.placeholder.com/150',
+                'imageUrl' => '/ejercicios/fuerza/straddle.jpeg',
             ],
             [
                 'id' => 1,
@@ -59,7 +59,7 @@ class ElementsController extends Controller
                 'name' => 'Mastepanova',
                 'category' => 'Acrobacias',
                 'difficulty' => 'A',
-                'imageUrl' => 'https://via.placeholder.com/150',
+                'video' => '/ejercicios/fuerza/straddle.mp4',
             ],
         );
     }

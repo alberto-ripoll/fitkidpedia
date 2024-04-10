@@ -3,26 +3,26 @@ import SidebarItemComponent from "./SidebarItemComponent";
 const items = [
   {
     text: "Ejercicios",
-    link: "/elementos",
+    link: "/ejercicios",
     items: [
       {
         text: "Flexibilidad",
-        link: "/elementos/flexibilidad",
+        link: "/ejercicios/flexibilidad",
         items: [],
       },
       {
         text: "Acrobacias",
-        link: "/elementos/acrobacias",
+        link: "/ejercicios/acrobacias",
         items: [],
       },
       {
         text: "Fuerza",
-        link: "/elementos/fuerza",
+        link: "/ejercicios/fuerza",
         items: [],
       },
       {
         text: "Salto",
-        link: "/elementos/salto",
+        link: "/ejercicios/salto",
         items: [],
       },
     ],

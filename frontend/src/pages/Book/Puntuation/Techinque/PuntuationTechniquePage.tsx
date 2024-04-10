@@ -4,7 +4,10 @@ const PuntuationTechniquePage = () => {
 
   return (
     <div className="bg-white flex flex-col">
-
+      <h1 className="text-4xl font-bold text-center mt-10 text-gray-800">
+        Puntuación Individual | Técnica
+      </h1>
+      <hr className="my-8" />
       <p className="text-lg text-gray-700 font-light px-4 py-2 leading-relaxed bg-gray-50 shadow-md rounded-md">
         {" "}
         Se asignan puntos considerando el contenido de la rutina (elementos) y la ejecución técnica de estos.

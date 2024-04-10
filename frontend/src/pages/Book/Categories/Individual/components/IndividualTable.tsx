@@ -31,27 +31,30 @@ const IndividualTable = () => {
 
   const categoriesToShow = showMaleCategories ? categoriasMasculinas : categorias;
   return (
-    <div className="overflow-x-auto relative w-3/4 mx-auto my-8 bg-gray-50 p-4 shadow-md rounded-md">
-      <div className="flex justify-around mb-4">
-        <button
-          onClick={handleToggleCategories}
-          className={`flex items-center bg-${showMaleCategories ? 'gray' : 'pink'}-500 hover:bg-${showMaleCategories ? 'gray' : 'pink'}-700 text-white font-bold py-2 px-4 rounded`}
-        >
-          <GiFemale className="mr-2" />
-          Femenino
-        </button>
-        <button
-          onClick={handleToggleCategories}
-          className={`flex items-center bg-${showMaleCategories ? 'blue' : 'gray'}-500 hover:bg-${showMaleCategories ? 'blue' : 'gray'}-700 text-white font-bold py-2 px-4 rounded`}
-        >
-          <GiMale className="mr-2" />
-          Masculino
-        </button>
+    <>
+      <div className="relative w-full mx-auto my-8 bg-gray-50 p-4 shadow-md rounded-md">
+        <div className="flex justify-around mb-4">
+          <button
+            onClick={handleToggleCategories}
+            className={`flex items-center ${showMaleCategories ? "bg-gray-500 hover:bg-gray-700" : "bg-pink-500 hover:bg-pink-700"} text-white font-bold py-2 px-4 rounded`}
+          >
+            <GiFemale className="mr-2" />
+            Femenino
+          </button>
+          <button
+            onClick={handleToggleCategories}
+            className={`flex items-center bg-${showMaleCategories ? 'blue' : 'gray'}-500 hover:bg-${showMaleCategories ? 'blue' : 'gray'}-700 text-white font-bold py-2 px-4 rounded`}
+          >
+            <GiMale className="mr-2" />
+            Masculino
+          </button>
+
+        </div>
+        <Tabla cabeceras={['EDAD', 'CATEGORIA', 'DIFICULTADES']} filas={categoriesToShow} />
 
       </div>
-      <Tabla cabeceras={['EDAD', 'CATEGORIA', 'DIFICULTADES']} filas={categoriesToShow} />
+    </>
 
-    </div>
   );
 };
 
