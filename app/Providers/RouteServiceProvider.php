@@ -7,16 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Support\Facades\RateLimiter;
 use Src\Auth\Infrastructure\Web\AuthRoutes;
-// use Src\Clientes\Shared\Infrastructure\Web\ClientesRoutes;
-// use Src\Administracion\Pagos\Infrastructure\Web\PagosRoutes;
-// use Src\Administracion\Zonas\Infrastructure\Web\ZonasRoutes;
-// use Src\Administracion\Clases\Infrastructure\Web\ClasesRoutes;
-// use Src\Administracion\Equipos\Infrastructure\Web\EquiposRoutes;
-// use Src\Administracion\Usuarios\Shared\Infrastructure\Web\UsuariosRoutes;
-// use Src\Shared\Usuarios\Deportistas\Infrastructure\Web\DeportistasRoutes;
-use Src\Context\Shared\Infrastructure\Web\ContextRoutes;
-use Src\Elements\Shared\Infrastructure\Web\ElementsRoutes;
-use Src\Elements\Shared\Infrastructure\Web\ElementsController;
+use Src\Elements\Infrastructure\Web\ElementsRoutes;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 // use Src\Administracion\Clientes\Mensualidades\Infrastructure\Web\MensualidadesRoutes;

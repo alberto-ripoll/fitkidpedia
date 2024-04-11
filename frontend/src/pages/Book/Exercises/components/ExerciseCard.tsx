@@ -3,12 +3,13 @@ import { useNavigate } from 'react-router-dom';
 interface ExerciseCardProps {
   id: string;
   dificultad: string;
+  tipo: string;
   ruta: string;
   imageUrl: string;
   name: string;
 }
 
-function ExerciseCard({ id, ruta, dificultad, imageUrl, name }: ExerciseCardProps) {
+function ExerciseCard({ id, ruta, dificultad, imageUrl, name, tipo }: ExerciseCardProps) {
   let navigate = useNavigate();
 
   // Objeto para mapear la dificultad a colores
@@ -31,6 +32,9 @@ function ExerciseCard({ id, ruta, dificultad, imageUrl, name }: ExerciseCardProp
       </div>
       <div className={`absolute top-0 right-0 ${getBackgroundColor(dificultad)} p-2 rounded-bl-lg`}>
         <h6 className="text-white text-md">{dificultad}</h6>
+      </div>
+      <div className={`absolute top-0 left-0 ${getBackgroundColor(dificultad)} p-2 rounded-br-lg`}>
+        <h6 className="text-white text-md">{tipo}</h6>
       </div>
     </div>
   );

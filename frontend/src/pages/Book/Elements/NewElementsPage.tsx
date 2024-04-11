@@ -15,7 +15,7 @@ const NewElementsPage = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center w-5/6 gap-8 mx-8 mt-8 mb-8">
+      <div className="flex flex-col items-center w-full gap-8">
         <h1 className="text-3xl font-bold">Nuevo Ejercicio</h1>
         <hr className="w-full border-gray-300" />
 

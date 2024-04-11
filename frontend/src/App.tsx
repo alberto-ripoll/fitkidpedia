@@ -22,6 +22,7 @@ import Footer from "./components/Footer";
 import WhatIsFitkidPage from "./pages/Book/Introduction/WhatIsFitKid/WhatIsFitkidPage";
 import FitKidChoreographyPage from "./pages/Book/Introduction/FitKidChoreography/FitKidChoreographyPage";
 import FaqPage from "./pages/Book/Faq/FaqPage";
+// import Marquesina from "./components/Marquesina/Marquesina";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,12 +35,15 @@ function App() {
   }, [location]);
   return (
     <div className="App">
-      <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+      <header className="App-header">
+        {/* <Marquesina /> */}
+        <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+      </header>
       <section className={`flex flex-row h-full`}>
         <MenuLateral />
-        {isMenuOpen && <div className="absolute inset-0 bg-black opacity-50 z-10"></div>}
-        <div className={`${location.pathname !== '/' ? 'mt-16' : ''} h-auto w-full`}>
-        {/* <div className={${location.pathname} `mt-16 w-full`}> */}
+        {isMenuOpen && <div onClick={toggleMenu} className="fixed h-full inset-0 bg-black opacity-50 z-10"></div>}
+        <div className={`${location.pathname !== '/' ? 'mt-16 md:p-12 py-8 px-4 ' : ''} h-auto w-full ${isMenuOpen ? 'fixed' : ''}`}>
+          {/* <div className={${location.pathname} `mt-16 w-full`}> */}
 
           <Routes>
             <Route path="/" element={<HomePage />} />

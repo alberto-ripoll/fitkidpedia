@@ -17,9 +17,8 @@ const Header = ({ isMenuOpen, toggleMenu }: HeaderProps) => {
     location.pathname !== "/puntuacion/ejercicios";
 
 
-
   return (
-    <nav className="bg-white fixed w-full top-0 z-50">
+    <nav className="bg-white fixed w-full z-50">
       <button
         onClick={toggleMenu}
         className="absolute left-4 top-4 lg:hidden md:hidden sm:block"
@@ -41,7 +40,7 @@ const Header = ({ isMenuOpen, toggleMenu }: HeaderProps) => {
       </button>
       <div className="flex justify-center items-center h-full w-full bg-gradient-to-r from-blue-500 to-teal-500">
         <Link to="/" className="flex justify-center items-center py-4 rounded-full transition duration-300 ease-in-out transform hover:scale-110">
-     
+
           <span className="font-bold text-xl text-white">
             FITKIDPEDIA
           </span>

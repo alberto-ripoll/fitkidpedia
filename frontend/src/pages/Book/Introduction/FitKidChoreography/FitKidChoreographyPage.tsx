@@ -4,7 +4,7 @@ import ImageCategory from "../../Categories/components/ImageCategory";
 function FitKidChoreographyPage() {
   return (
     <>
-      <div className="flex flex-col py-12 px-12 w-full align-middle justify-center">
+      <div className="flex flex-col w-full align-middle justify-center">
 
         <h1 className="text-4xl font-bold text-center text-gray-800">
           ¿Qué incluye una coreografía FitKid?

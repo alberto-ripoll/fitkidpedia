@@ -46,18 +46,18 @@ const imagenPorCategoria: { [key: string]: any } = {
     <ImageCategory imageUrl="https://paiporta.es/img/uploads/596afaf01.jpg" />,
 
   big_free:
-  <>
-  <div className="w-full">
-  <ImageCategory imageUrl="https://www.elperiodic.com/archivos/imagenes/noticias/2022/12/12/image-3.jpeg" />,
+    <>
+      <div className="w-full">
+        <ImageCategory imageUrl="https://www.elperiodic.com/archivos/imagenes/noticias/2022/12/12/image-3.jpeg" />,
 
-  </div>
-  </>
+      </div>
+    </>
 };
 
 function CategoriesPage({ categoria }: CategoriesPageProps) {
   return (
     <>
-      <div className="flex flex-col py-12 px-12 w-full align-middle justify-center">
+      <div className="flex flex-col w-full align-middle justify-center">
         {categoria === "big_free" ? (
           <h1 className="text-4xl font-bold text-center text-gray-800">
             Categoría Big Free

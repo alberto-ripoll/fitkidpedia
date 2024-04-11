@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface ExerciseInfoProps {
   titulo: string;
   dificultad: string;
@@ -21,21 +23,27 @@ function ExerciseInfo({
       </h1>
       <hr className="my-2" />
       <section className="flex flex-col justify-around">
-        <div className="flex my-3 justify-center">
-          <h2 className="text-lg text-gray-600 font-bold">Dificultad</h2>
-          <a
-            href="/puntuacion/ejercicios"
-            className="text-lg text-blue-500 hover:text-blue-700 ml-10"
-          >
-            {dificultad}
-          </a>
+        <div className="flex my-3 justify-around sm:flex-row flex-col gap-2">
+        <div className="flex">
           <h2 className="text-lg text-gray-600 font-bold ml-10">Tipo</h2>
-          <a
-            href={"/ejercicios/" + tipo.toLowerCase()}
+          <Link
+            to={"/ejercicios/" + tipo.toLowerCase()}
             className="text-lg text-blue-500 hover:text-blue-700 ml-10"
           >
             {tipo}
-          </a>
+          </Link>
+          </div>
+          <div className="flex">
+          <h2 className="text-lg text-gray-600 font-bold">Dificultad</h2>
+          <Link
+            to="/puntuacion/ejercicios"
+            className="text-lg text-blue-500 hover:text-blue-700 ml-10"
+          >
+            {dificultad}
+          </Link>
+          </div>
+  
+     
         </div>
 
         <p className="text-md text-gray-600 mt-2">{descripcion}</p>

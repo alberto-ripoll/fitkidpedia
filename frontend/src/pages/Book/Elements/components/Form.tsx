@@ -12,7 +12,28 @@ const Formulario = ({ handleInputChange, isFormReady }: any) => {
               className="block  tracking-wide text-gray-700 text-xs font-bold mb-2"
               htmlFor="grid-first-name"
             >
-              Nombre (requerido)
+              Tu Nombre (requerido)
+            </label>
+            <input
+              onChange={(e) => handleInputChange(e.target.value)}
+              className={`appearance-none block w-full bg-white text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white ${!isFormReady ? 'border-red-500' : 'border-gray-200'}`}
+              id="grid-first-name"
+              type="text"
+              placeholder="Alberto Ripoll"
+            />
+            {!isFormReady && <p className="text-red-500 text-xs italic">
+              Introduce tu nombre
+            </p>}
+
+          </div>
+        </div>
+        <div className="flex flex-wrap -mx-3 mb-6">
+          <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <label
+              className="block  tracking-wide text-gray-700 text-xs font-bold mb-2"
+              htmlFor="grid-first-name"
+            >
+              Nombre del ejercicio (requerido)
             </label>
             <input
               onChange={(e) => handleInputChange(e.target.value)}

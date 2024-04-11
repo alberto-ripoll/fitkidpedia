@@ -1,15 +1,16 @@
 <?php
 
-namespace Src\Elements\Shared\Infrastructure\Web;
+namespace Src\Elements\Application;
 
-use App\Http\Controllers\Controller;
-use Src\Shared\Core\Foundation\Http\ApiResponse;
-
-class ElementsController extends Controller
+class ListarEjerciciosRelacionadosQueryHandler
 {
-    public function index()
+    public function __construct()
     {
-        return ApiResponse::json([
+    }
+
+    public function run(ListarEjerciciosRelacionadosQuery $query)
+    {
+        return [
             [
                 'id' => 1,
                 'name' => 'Straddle planche',
@@ -48,19 +49,6 @@ class ElementsController extends Controller
                 'difficulty' => 'A',
                 'imageUrl' => 'https://via.placeholder.com/150',
             ],
-        ]);
-    }
-
-    public function show()
-    {
-        return ApiResponse::json(
-            [
-                'id' => 1,
-                'name' => 'Mastepanova',
-                'category' => 'Acrobacias',
-                'difficulty' => 'A',
-                'video' => '/ejercicios/fuerza/straddle.mp4',
-            ],
-        );
+        ];
     }
 }

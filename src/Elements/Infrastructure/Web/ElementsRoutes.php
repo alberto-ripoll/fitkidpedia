@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Elements\Shared\Infrastructure\Web;
+namespace Src\Elements\Infrastructure\Web;
 
 use Illuminate\Support\Facades\Route;
 use Src\Shared\Core\Routes\ApiBaseRoutes;
@@ -15,7 +15,8 @@ class ElementsRoutes extends ApiBaseRoutes
             ->group(function () {
                 Route::get('/{category}', [ElementsController::class, 'index']);
                 Route::get('/elemento/{exercise}', [ElementsController::class, 'show']);
-                Route::get('/relacionados/{exercise}', [ElementsController::class, 'index']);
+                Route::get('/relacionados/{exercise}', [ElementsController::class, 'buscarRelacionados']);
+                Route::get('/buscar/{query}', [ElementsController::class, 'search']);
             });
     }
 }

@@ -172,6 +172,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\RegisterBindingsServiceProvider::class,
         Illuminate\Session\SessionServiceProvider::class,
+        LaravelDoctrine\Migrations\MigrationsServiceProvider::class,
     ])->toArray(),
 
     /*

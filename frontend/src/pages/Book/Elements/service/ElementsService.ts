@@ -1,8 +1,8 @@
 import axiosClient from "../../../../lib/axios-client";
 
 export class ElementsService {
-  async getElement(id: string): Promise<any> {
 
+  async getElement(id: string): Promise<any> {
     let elemento = await axiosClient.get("/ejercicios/elemento/" + id);
     return elemento.data.data;
   }
@@ -14,6 +14,11 @@ export class ElementsService {
 
   async getRelatedElements(id: string): Promise<any> {
     let elementos = await axiosClient.get(`/ejercicios/relacionados/${id}`);
+    return elementos.data.data;
+  }
+
+  async searchElements(input: string): Promise<any> {
+    let elementos = await axiosClient.get(`/ejercicios/buscar/${input}`);
     return elementos.data.data;
   }
 
