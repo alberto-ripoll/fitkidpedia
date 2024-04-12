@@ -7,7 +7,7 @@ const CategoriaBigText = () => (
     </p>
     <p className="text-lg text-gray-700 font-light px-4 py-2 leading-relaxed bg-gray-50 shadow-md rounded-md">
 
-      Los competidores pueden participar en la siguiente categoría de edad superior, pero el número de estos participantes no puede ser más del 50% de los miembros del grupo.
+      Pueden haber miembros en el grupo de la siguiente categoría de edad superior, pero el número de estos participantes no puede ser más del 50% de los miembros del grupo.
     </p>
   </>
 

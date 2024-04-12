@@ -1,18 +1,17 @@
 interface TablaProps {
   cabeceras: string[];
-  filas: string[][];
+  filas: any[][];
 }
 
 const Tabla = ({ cabeceras, filas }: TablaProps) => {
   return (
     <>
-        <div className="overflow-x-auto mx-auto my-8 min-w-52">
-      <div className="bg-gray-50 p-4 shadow-md rounded-md">
+      <div className="bg-gray-50 px-4 py-2 shadow-md rounded-md mx-auto">
         <table className="w-full text-md text-left text-gray-700">
           <thead className="text-md text-gray-700 uppercase bg-gray-50">
             <tr>
               {cabeceras.map((cabecera, index) => (
-                <th scope="col" className="py-3 px-6" key={index}>
+                <th scope="col" className="py-4 px-2 md:px-6 text-center" key={index}>
                   {cabecera}
                 </th>
               ))}
@@ -22,7 +21,7 @@ const Tabla = ({ cabeceras, filas }: TablaProps) => {
             {filas.map((fila, index) => (
               <tr key={index} className="bg-white border-b hover:bg-gray-50">
                 {fila.map((elemento, index) => (
-                  <td key={index} className="py-4 px-6">
+                  <td key={index} className="py-4 px-2 md:px-6 text-center">
                     {elemento}
                   </td>
                 ))}
@@ -31,7 +30,6 @@ const Tabla = ({ cabeceras, filas }: TablaProps) => {
           </tbody>
         </table>
       </div>
-    </div>
     </>
 
 

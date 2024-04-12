@@ -48,9 +48,7 @@ const FaqsCard = (props: any) => {
                 style={state ? { height: answerH } : { height: '0px' }}
             >
                 <div>
-                    <p className="text-gray-500">
-                        {faqsList.a}
-                    </p>
+                    {faqsList.a}
                 </div>
             </div>
         </div>
@@ -62,15 +60,15 @@ export default () => {
     const faqsList = [
         {
             q: "¿Que es Fitkidpedia?",
-            a: "Fitkidpedia es la enciclopedia del código Fitkid federado. La misión es que el código sea mucho más comprensible para todo el mundo. Puedes buscar en el código y encontrar toda la información que necesitass."
+            a: <p className="text-gray-500">Fitkidpedia es la enciclopedia del código Fitkid federado. La misión es que el código sea mucho más comprensible para todo el mundo. Puedes buscar en el código y encontrar toda la información que necesitas.</p>
         },
         {
-            q: "¿Donde está el código fitkid original?",
-            a: "Puedes encontrar el código original de Fitkid buscando <a href=''>'fitkid code'</a> en Google."
+            q: "¿Donde está el código FitKid original?",
+            a: <p className="text-gray-500">Puedes encontrar el código original del FitKid federado pulsando <a className="underline text-blue-500" href='https://www.febd.es/wordpress/wp-content/uploads/2019/01/CODIGO-FIT-KID-2019.pdf' target="_blank" rel="noopener noreferrer">aquí</a></p>
         },
         {
             q: "¡Veo información erronea!",
-            a: "¡Es posible! Si hay algo que no te cuadra puedes contactar directamente conmigo a través de Instagram. @alberto_ripoll"
+            a: <p className="text-gray-500">¡Es posible! Si hay algo que no te cuadra puedes contactar directamente conmigo a través de Instagram. @alberto_ripoll</p>
         }
     ]
 

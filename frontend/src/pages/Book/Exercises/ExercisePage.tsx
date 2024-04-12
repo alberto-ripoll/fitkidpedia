@@ -51,7 +51,7 @@ function ExercisePage() {
       {element && ( // Verificamos si element es nulo antes de intentar renderizar el componente
         <section className="flex sm:flex-col md:flex-col xl:flex-row h-auto gap-2 w-full flex-col">
 
-          <div className="h-full p-4 flex flex-col justify-around gap-3">
+          <div className="h-full p-4 flex flex-col justify-around gap-3 xl:w-2/3">
             <ExerciseVideo videoUrl={element.video} />
             <ExerciseInfo
               titulo={element.name}
@@ -69,7 +69,7 @@ function ExercisePage() {
             />
           </div>
 
-          <div className="p-4 flex flex-col gap-4 justify-center">
+          <div className="p-4 flex flex-col gap-4 w-full justify-center xl:w-1/3">
             {relatedElements.map((element) => (
               <div key={element.id} className="w-full flex items-center justify-center">
                 <ExerciseRelated

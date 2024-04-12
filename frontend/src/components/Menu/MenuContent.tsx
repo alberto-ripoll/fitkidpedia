@@ -1,4 +1,4 @@
-import { FaPuzzlePiece, FaUsers, FaQuestionCircle, FaTrophy, FaRegLightbulb } from "react-icons/fa";
+import { FaPuzzlePiece, FaUsers, FaQuestionCircle, FaTrophy, FaRegLightbulb, FaStar } from "react-icons/fa";
 import MenuItem from "./MenuItem";
 
 const nestedNav = [
@@ -15,13 +15,21 @@ const nestedNav = [
     { name: "Big", href: "/categorias/big", icon: "" },
     { name: "Big Free", href: "/categorias/big-free", icon: "" },
   ];
-  const nestedNavCompeticion = [
+  const nestedNavPuntuacion = [
     { name: "Ejercicios", href: "/puntuacion/ejercicios", icon: "" },
     { name: "Técnica", href: "/puntuacion/tecnica", icon: "" },
     { name: "Artístico", href: "/puntuacion/artistico", icon: "" },
     { name: "Total", href: "/puntuacion/total", icon: "" },
   ];
-  // const nestedNavCompeticionGrupal = [
+  const nestedNavCompeticion = [
+    { name: "Area", href: "/competicion/area", icon: "" },
+    { name: "Jueces", href: "/competicion/jueces", icon: "" },
+    { name: "Coreografía", href: "/competicion/coreografia", icon: "" },
+  ];
+
+
+  
+  // const nestedNavPuntuacionGrupal = [
   //   { name: "Duo, Small y Big", href: "/puntuacion-grupal/grupos", icon: "" },
   //   { name: "Big Free", href: "/puntuacion-grupal/big-free", icon: "" },
   // ];
@@ -53,13 +61,16 @@ const MenuContent = () => {
             </MenuItem>
             <hr className="my-2" />
 
-            {/* <hr className="my-2" /> */}
-            <MenuItem items={nestedNavCompeticion} text="Puntuación individual">
+             <MenuItem items={nestedNavCompeticion} text="Competicion">
                 <FaTrophy />
             </MenuItem>
-            {/*  <MenuItem items={nestedNavCompeticionGrupal} text="Puntuación grupal">
+            <MenuItem items={nestedNavPuntuacion} text="Puntuación individual">
+                <FaStar />
+            </MenuItem>
+            {/*  <MenuItem items={nestedNavPuntuacionGrupal} text="Puntuación grupal">
                   <FaTrophy />
                 </MenuItem> */}
+    
             <hr className="my-2" />
             <MenuItem items={nestedNavFaq} text="Preguntas frecuentes">
                 <FaQuestionCircle />

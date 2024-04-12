@@ -4,13 +4,15 @@ import ExerciseCard from "../Exercises/components/ExerciseCard";
 import { ElementsService } from "./service/ElementsService";
 
 function ElementsPage({ category = "" }: { category: string }) {
-
   const [elements, setElements] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
     try {
+      setLoading(true);
       const response = await getElementsByCategory(category);
-      setElements(response); // Almacena los datos recibidos en el estado del componente
+      setElements(response);
+      setLoading(false);
     } catch (error) {
       console.error("Error fetching elements:", error);
     }
@@ -26,8 +28,11 @@ function ElementsPage({ category = "" }: { category: string }) {
         fetchData();
         return;
       }
+      setLoading(true);
+
       const response = await new ElementsService().searchElements(input);
-      setElements(response); // Almacena los datos recibidos en el estado del componente
+      setElements(response);
+      setLoading(false);
     } catch (error) {
       console.error("Error fetching elements:", error);
     }
@@ -52,9 +57,27 @@ function ElementsPage({ category = "" }: { category: string }) {
         </h1>
         <hr className="my-8 w-full" />
         <SearchBar onChange={onChangeInput} />
+        {loading && (
+          <>
+            <div className='flex space-x-2 w-full justify-center items-center bg-white h-60'>
+              <div className='h-8 w-8 bg-blue-400 rounded-full animate-bounce [animation-delay:-0.3s] '></div>
+              <div className='h-8 w-8 bg-blue-400 rounded-full animate-bounce [animation-delay:-0.15s]'></div>
+              <div className='h-8 w-8 bg-blue-400 rounded-full animate-bounce'></div>
+            </div>
+          </>
+        )}
+        {elements.length === 0 && !loading && (
+          <>
+            <h2 className="text-xl font-semibold text-center text-gray-800">
+              No se encontraron ejercicios con ese nombre
+            </h2>
+
+          </>
+        )}
         <section className="grid gap-8 w-full lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-          {elements.map((element: any) => (
+          {!loading && elements.length !== 0 && elements.map((element) => (
             <ExerciseCard
+              key={element.id} // Añadir un key único para cada elemento en la lista
               id={element.id}
               tipo="Flexibilidad"
               dificultad={element.difficulty}
@@ -63,7 +86,9 @@ function ElementsPage({ category = "" }: { category: string }) {
               name={element.name}
             />
           ))}
+
         </section>
+
 
       </div>
     </>

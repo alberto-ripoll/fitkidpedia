@@ -22,6 +22,9 @@ import Footer from "./components/Footer";
 import WhatIsFitkidPage from "./pages/Book/Introduction/WhatIsFitKid/WhatIsFitkidPage";
 import FitKidChoreographyPage from "./pages/Book/Introduction/FitKidChoreography/FitKidChoreographyPage";
 import FaqPage from "./pages/Book/Faq/FaqPage";
+import AreaPage from "./pages/Book/Competition/Area/AreaPage";
+import JudgePage from "./pages/Book/Competition/Judge/JudgePage";
+import ChoreographyPage from "./pages/Book/Competition/Choreography/ChoreographyPage";
 // import Marquesina from "./components/Marquesina/Marquesina";
 
 function App() {
@@ -67,6 +70,10 @@ function App() {
             <Route path="/categorias/small" element={<CategoriesPage categoria="small" />} />
             <Route path="/categorias/big" element={<CategoriesPage categoria="big" />} />
             <Route path="/categorias/big-free" element={<CategoriesPage categoria="big_free" />} />
+
+            <Route path="/competicion/area" element={<AreaPage />} />
+            <Route path="/competicion/jueces" element={<JudgePage />} />
+            <Route path="/competicion/coreografia" element={<ChoreographyPage />} />
 
             <Route path="/puntuacion/ejercicios" element={<PuntuationElementsPage />} />
             <Route path="/puntuacion/tecnica" element={<PuntuationTechniquePage />} />

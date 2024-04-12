@@ -25,25 +25,23 @@ const categoriasMasculinas = [
 const IndividualTable = () => {
   const [showMaleCategories, setShowMaleCategories] = useState(false);
 
-  const handleToggleCategories = () => {
-    setShowMaleCategories(!showMaleCategories);
-  };
-
   const categoriesToShow = showMaleCategories ? categoriasMasculinas : categorias;
+  
   return (
     <>
       <div className="relative w-full mx-auto my-8 bg-gray-50 p-4 shadow-md rounded-md">
-        <div className="flex justify-around mb-4">
+        <div className="flex justify-around mb-4 w-full divide-x">
           <button
-            onClick={handleToggleCategories}
-            className={`flex items-center ${showMaleCategories ? "bg-gray-500 hover:bg-gray-700" : "bg-pink-500 hover:bg-pink-700"} text-white font-bold py-2 px-4 rounded`}
+            onClick={() => setShowMaleCategories(false)}
+            className={`w-full flex items-center border-b-2 ${showMaleCategories ? "text-gray-500 border-gray-500 hover:border-pink-700 hover:text-pink-700 " : " border-pink-700 hover:border-pink-700 text-pink-700"} font-bold py-2 px-4`}
           >
             <GiFemale className="mr-2" />
             Femenino
           </button>
+          
           <button
-            onClick={handleToggleCategories}
-            className={`flex items-center bg-${showMaleCategories ? 'blue' : 'gray'}-500 hover:bg-${showMaleCategories ? 'blue' : 'gray'}-700 text-white font-bold py-2 px-4 rounded`}
+            onClick={() => setShowMaleCategories(true)}
+            className={`w-full flex items-center border-b-2 ${showMaleCategories ? 'border-blue-700 hover:border-blue-700 text-blue-700' : 'text-gray-500 border-gray-500 hover:border-blue-700 hover:text-blue-700'} font-bold py-2 px-4`}
           >
             <GiMale className="mr-2" />
             Masculino
