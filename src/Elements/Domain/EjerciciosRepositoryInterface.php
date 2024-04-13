@@ -8,5 +8,5 @@ interface EjerciciosRepositoryInterface
     public function search(string $query): array;
 
     public function all(): array;
-    public function find(int $id): array;
+    public function find(string $name): array;
 }
