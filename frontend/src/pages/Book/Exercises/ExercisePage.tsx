@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 // Interfaz para describir la estructura de element
 interface Element {
   id: string;
-  name: string;
+  nombre: string;
   video: string;
   dificultad: string;
   tipo: string;
@@ -55,7 +55,7 @@ function ExercisePage() {
           <div className="h-full p-4 flex flex-col justify-around gap-3 xl:w-2/3">
             <ExerciseVideo videoUrl={element.video} />
             <ExerciseInfo
-              titulo={element.name}
+              titulo={element.nombre}
               dificultad={element.dificultad}
               tipo={element.tipo}
               descripcion={element.descripcion}
@@ -78,7 +78,7 @@ function ExercisePage() {
                   id={element.id}
                   ruta={`/ejercicios/${element.tipo}/${element.id}`}
                   imageUrl={element.image}
-                  name={element.name}
+                  name={element.nombre}
                 />
               </div>
             ))}

@@ -24,26 +24,26 @@ function ExerciseInfo({
       <hr className="my-2" />
       <section className="flex flex-col justify-around">
         <div className="flex my-3 justify-around sm:flex-row flex-col gap-2">
-        <div className="flex">
-          <h2 className="text-lg text-gray-600 font-bold ml-10">Tipo</h2>
-          <Link
-            to={"/ejercicios/" + tipo.toLowerCase()}
-            className="text-lg text-blue-500 hover:text-blue-700 ml-10"
-          >
-            {tipo}
-          </Link>
+          <div className="flex">
+            <h2 className="text-lg text-gray-600 font-bold ml-10">Tipo</h2>
+            <Link
+              to={"/ejercicios/" + tipo.toLowerCase()}
+              className="text-lg text-blue-500 hover:text-blue-700 ml-10"
+            >
+              {tipo.charAt(0).toUpperCase() + tipo.slice(1)}
+            </Link>
           </div>
           <div className="flex">
-          <h2 className="text-lg text-gray-600 font-bold">Dificultad</h2>
-          <Link
-            to="/puntuacion/ejercicios"
-            className="text-lg text-blue-500 hover:text-blue-700 ml-10"
-          >
-            {dificultad}
-          </Link>
+            <h2 className="text-lg text-gray-600 font-bold">Dificultad</h2>
+            <Link
+              to="/puntuacion/ejercicios"
+              className="text-lg text-blue-500 hover:text-blue-700 ml-10"
+            >
+              {dificultad}
+            </Link>
           </div>
-  
-     
+
+
         </div>
 
         <p className="text-md text-gray-600 mt-2">{descripcion}</p>
