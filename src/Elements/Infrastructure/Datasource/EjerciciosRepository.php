@@ -9,7 +9,7 @@ class EjerciciosRepository implements EjerciciosRepositoryInterface
 {
     public function withCategory(string $category): array
     {
-        return DB::table('ejercicios')->where('category', $category)->get()->toArray();
+        return DB::table('ejercicios')->where('tipo', $category)->get()->toArray();
     }
 
     public function search(string $query): array

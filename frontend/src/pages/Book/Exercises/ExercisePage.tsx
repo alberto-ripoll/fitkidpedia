@@ -10,9 +10,9 @@ interface Element {
   id: string;
   name: string;
   video: string;
-  difficulty: string;
-  category: string;
-  imageUrl: string;
+  dificultad: string;
+  tipo: string;
+  image: string;
   descripcion: string;
 }
 
@@ -56,8 +56,8 @@ function ExercisePage() {
             <ExerciseVideo videoUrl={element.video} />
             <ExerciseInfo
               titulo={element.name}
-              dificultad={element.difficulty}
-              tipo={element.category}
+              dificultad={element.dificultad}
+              tipo={element.tipo}
               descripcion={element.descripcion}
               erroresComunes={[
                 "No flexionar las rodillas y tener caca",
@@ -74,10 +74,10 @@ function ExercisePage() {
             {relatedElements.map((element) => (
               <div key={element.id} className="w-full flex items-center justify-center">
                 <ExerciseRelated
-                  dificultad={element.difficulty}
+                  dificultad={element.dificultad}
                   id={element.id}
-                  ruta={`/ejercicios/${element.category}/${element.id}`}
-                  imageUrl={element.imageUrl}
+                  ruta={`/ejercicios/${element.tipo}/${element.id}`}
+                  imageUrl={element.image}
                   name={element.name}
                 />
               </div>

@@ -79,10 +79,10 @@ function ElementsPage({ category = "" }: { category: string }) {
             <ExerciseCard
               key={element.id} // Añadir un key único para cada elemento en la lista
               id={element.id}
-              tipo={element.category}
-              dificultad={element.difficulty}
+              tipo={element.tuoi}
+              dificultad={element.dificultad}
               ruta={`/ejercicios/${element.category.toLowerCase()}/${element.name.replace(/\s/g, "-").toLowerCase()}`}
-              imageUrl={element.imageUrl}
+              imageUrl={element.image}
               name={element.name}
             />
           ))}
