@@ -13,7 +13,7 @@ class ListarEjerciciosDeCategoriaQueryHandler
         return [
             [
                 'id' => 1,
-                'name' => 'Straddle planche',
+                'name' => 'Infernal',
                 'category' => 'Fuerza',
                 'difficulty' => 'A',
                 'imageUrl' => '/ejercicios/fuerza/straddle.jpeg',

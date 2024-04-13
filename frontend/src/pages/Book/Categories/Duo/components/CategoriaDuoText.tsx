@@ -1,15 +1,14 @@
 const DuoText = () => (
     <>
       <p className="text-lg text-gray-700 bg-orange-50 font-light px-4 py-2 leading-loose shadow-md rounded-md">
-        Las <span className="font-bold">competiciones por parejas (Duo)</span>{" "}
-        están <span className="font-bold">categorizadas por edad</span>, teniendo
-        la particularidad de que se permite que uno de los miembros de la pareja
+        Las <span className="font-bold">competiciones Duo</span>{" "}
+        están <span className="font-bold">categorizadas por edad</span>, y constisten en coreografías en pareja.
+        <br></br>
+        <br></br>
+        Se permite que uno de los miembros de la pareja
         sea de un <span className="font-bold">grupo de edad superior</span>, por
         lo que el dúo competirá en la categoría de edad correspondiente al miembro
-        más mayor.<br /><br />
-        Esta categoría no solo evalúa el rendimiento individual, sino la armonía y
-        química entre los compañeros, haciendo de cada presentación un espectáculo
-        de unidad y compenetración.
+        más mayor.
       </p>
     
     </>

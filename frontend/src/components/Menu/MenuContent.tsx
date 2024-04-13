@@ -24,7 +24,7 @@ const nestedNav = [
   const nestedNavCompeticion = [
     { name: "Area", href: "/competicion/area", icon: "" },
     { name: "Jueces", href: "/competicion/jueces", icon: "" },
-    { name: "Coreografía", href: "/competicion/coreografia", icon: "" },
+    // { name: "Coreografía", href: "/competicion/coreografia", icon: "" },
   ];
 
 

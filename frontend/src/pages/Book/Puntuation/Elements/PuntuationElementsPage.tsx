@@ -34,16 +34,16 @@ const PuntuationElementsPage = () => {
       </h2>
       <hr className="my-8" />
 
-      <p className="text-lg text-gray-700 font-light px-4 py-2 leading-relaxed bg-gray-50 shadow-md rounded-md">
+      <p className="text-lg text-gray-700 font-light px-4 py-2 leading-loose bg-orange-50 shadow-md rounded-md">
         Cada juez registra el número de elementos ejecutados (identificados de A
         a H) en su hoja de puntuación.
       </p>
-      <p className="text-lg text-gray-700 font-light px-4 py-2 leading-relaxed bg-gray-50 shadow-md rounded-md">
+      <p className="text-lg text-gray-700 font-light px-4 py-2 leading-loose bg-orange-50 shadow-md rounded-md">
         {" "}
         Se asignan puntos considerando el valor de los elementos (con valores
         asignados desde 0.1 a 0.8 puntos).
       </p>
-      <p className="text-lg text-gray-700 font-light px-4 py-2 leading-relaxed bg-gray-50 shadow-md rounded-md">
+      <p className="text-lg text-gray-700 font-light px-4 py-2 leading-loose bg-orange-50 shadow-md rounded-md">
         Esto permite comparar y evaluar de manera imparcial la calidad de las
         rutinas de los competidores.
       </p>

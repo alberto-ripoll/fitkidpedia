@@ -17,7 +17,7 @@ const Hero = () => {
       </h2>
       <Link
         to="/ejercicios"
-        className="py-4 px-14 my-5 relative z-20 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out hover:scale-105 active:scale-95"
+        className="py-4 my-5 px-28 relative z-20 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out hover:scale-105 active:scale-95"
       >
         Ir a FitKidpedia
       </Link>

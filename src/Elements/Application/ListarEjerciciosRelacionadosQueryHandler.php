@@ -13,9 +13,9 @@ class ListarEjerciciosRelacionadosQueryHandler
         return [
             [
                 'id' => 1,
-                'name' => 'Straddle planche',
+                'name' => 'Infernal',
                 'category' => 'Fuerza',
-                'difficulty' => 'A',
+                'difficulty' => 'H',
                 'imageUrl' => '/ejercicios/fuerza/straddle.jpeg',
             ],
             [

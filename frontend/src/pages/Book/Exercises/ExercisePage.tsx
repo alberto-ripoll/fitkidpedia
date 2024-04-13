@@ -13,6 +13,7 @@ interface Element {
   difficulty: string;
   category: string;
   imageUrl: string;
+  descripcion: string;
 }
 
 function ExercisePage() {
@@ -57,7 +58,7 @@ function ExercisePage() {
               titulo={element.name}
               dificultad={element.difficulty}
               tipo={element.category}
-              descripcion="El ejercicio consiste en maximizar la distancia de un salto horizontalmente desde un punto de partida."
+              descripcion={element.descripcion}
               erroresComunes={[
                 "No flexionar las rodillas y tener caca",
                 "No impulsarse con los brazos al jugar al inecraft",

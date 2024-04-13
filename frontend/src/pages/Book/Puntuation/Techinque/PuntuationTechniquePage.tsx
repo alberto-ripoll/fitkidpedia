@@ -12,7 +12,7 @@ const PuntuationTechniquePage = () => {
         Técnica
       </h2>
       <hr className="my-8" />
-      <p className="text-lg text-gray-700 font-light px-4 py-2 leading-relaxed bg-gray-50 shadow-md rounded-md">
+      <p className="text-lg text-gray-700 font-light px-4 py-2 leading-loose bg-orange-50 shadow-md rounded-md">
         {" "}
         Se asignan puntos considerando el contenido de la rutina (ejercicios) y la ejecución técnica de estos.
       </p>

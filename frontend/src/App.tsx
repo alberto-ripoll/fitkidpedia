@@ -20,7 +20,7 @@ import PuntuationArtisticPage from "./pages/Book/Puntuation/Artistic/PuntuationA
 import BigFreePuntuationPage from "./pages/Book/GroupPuntuation/BigFree/BigFreePuntuationPage";
 import Footer from "./components/Footer";
 import WhatIsFitkidPage from "./pages/Book/Introduction/WhatIsFitKid/WhatIsFitkidPage";
-import FitKidChoreographyPage from "./pages/Book/Introduction/FitKidChoreography/FitKidChoreographyPage";
+// import FitKidChoreographyPage from "./pages/Book/Introduction/FitKidChoreography/FitKidChoreographyPage";
 import FaqPage from "./pages/Book/Faq/FaqPage";
 import AreaPage from "./pages/Book/Competition/Area/AreaPage";
 import JudgePage from "./pages/Book/Competition/Judge/JudgePage";
@@ -52,7 +52,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
 
             <Route path="/introduccion/que-es-fitkid" element={<WhatIsFitkidPage />} />
-            <Route path="/introduccion/que-incluye-coreografia-fitkid" element={<FitKidChoreographyPage />} />
+            <Route path="/introduccion/que-incluye-coreografia-fitkid" element={<ChoreographyPage />} />
 
             <Route path="/ejercicios/" element={<Navigate to="/ejercicios/fuerza" />} />
             <Route path="/ejercicios/nuevo-elemento" element={<NewElementsPage />} />
