@@ -13,6 +13,7 @@ class MostrarDetalleEjercicioQueryHandler
 
     public function run(MostrarDetalleEjercicioQuery $query)
     {
-        return $this->repository->find($query->id());
+        $detalle = $this->repository->find($query->id());
+        return $detalle[0];
     }
 }
