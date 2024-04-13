@@ -12,17 +12,20 @@ class DatabaseSeeder extends Seeder
     {
         DB::beginTransaction();
 
-        DB::insert(
-            'insert into ejercicios (nombre, image, video, descripcion, dificultad, tipo) values (?, ?, ?, ?, ?, ?)',
-            [
-                ['Lateral sin manos', '/ejercicios/lateral-sin-manos-quieta.png', '/ejercicios/lateral-sin-manos.MOV', '...', 'C', 'acrobacias'],
-                ['Paloma sin manos', '/ejercicios/paloma-sin-manos-quieta.png', '/ejercicios/paloma-sin-manos.MOV', '...', 'C', 'acrobacias'],
-                ['Flic flac', '/ejercicios/flic.png', '/ejercicios/flic.MOV', '...', 'C', 'acrobacias'],
-                ['Mortal carpado sin manos', '/ejercicios/paloma-sin-manos-quieta.png', '/ejercicios/carpado.MOV', '...', 'C', 'acrobacias'],
-                ['Infernal', '/ejercicios/infernal.jpeg', '/ejercicios/infernal.mp4', '...', 'H', 'fuerza'],
+        $data = [
+            ['Lateral sin manos', '/ejercicios/lateral-sin-manos-quieta.png', '/ejercicios/lateral-sin-manos.MOV', '...', 'C', 'acrobacias'],
+            ['Paloma sin manos', '/ejercicios/paloma-sin-manos-quieta.png', '/ejercicios/paloma-sin-manos.MOV', '...', 'C', 'acrobacias'],
+            ['Flic flac', '/ejercicios/flic.png', '/ejercicios/flic.MOV', '...', 'C', 'acrobacias'],
+            ['Mortal carpado sin manos', '/ejercicios/paloma-sin-manos-quieta.png', '/ejercicios/carpado.MOV', '...', 'C', 'acrobacias'],
+            ['Infernal', '/ejercicios/infernal.jpeg', '/ejercicios/infernal.mp4', '...', 'H', 'fuerza'],
+        ];
 
-            ]
-        );
+        foreach ($data as $row) {
+            DB::insert(
+                'insert into ejercicios (nombre, image, video, descripcion, dificultad, tipo) values (?, ?, ?, ?, ?, ?)',
+                $row
+            );
+        }
 
         DB::commit();
     }
