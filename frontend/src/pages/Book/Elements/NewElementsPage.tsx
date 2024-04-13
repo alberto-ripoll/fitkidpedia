@@ -19,14 +19,14 @@ const NewElementsPage = () => {
         <h1 className="text-3xl font-bold">Nuevo Ejercicio</h1>
         <hr className="w-full border-gray-300" />
 
-        <section className="flex xl:flex-row lg:flex-col md:flex-col sm:flex-col flex-col w-full justify-evenly gap-20">
+        <section className="flex xl:flex-row lg:flex-col md:flex-col sm:flex-col flex-col w-full justify-evenly gap-10">
 
-          <Formulario isFormReady={isFormReady} handleInputChange={handleInputChange} />
           <DragComponent />
+          <Formulario isFormReady={isFormReady} handleInputChange={handleInputChange} />
         </section>
         <button
           disabled={!isFormReady}
-          className={`py-2 px-4 rounded focus:outline-none focus:shadow-outline w-3/4 mt-12 ${isFormReady ? 'bg-blue-500 hover:bg-blue-700 text-white font-bold' : 'bg-gray-300 cursor-not-allowed text-gray-600 font-medium'}`}
+          className={`py-2 px-4 rounded focus:outline-none focus:shadow-outline w-3/4 ${isFormReady ? 'bg-blue-500 hover:bg-blue-700 text-white font-bold' : 'bg-gray-300 cursor-not-allowed text-gray-600 font-medium'}`}
 
           type="button"
         >

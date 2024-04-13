@@ -12,7 +12,7 @@ const MenuLateral = () => {
   }
   return (
     <div className="lg:block md:block sm:hidden pt-16 pb-40 hidden max-h-[50vh]">
-      <nav className="my-2 top-0 left-0 w-full bg-white space-y-8 md:w-60 lg:w-80 sm:w-full border-r max-h-[50vh] border-blue-100">
+      <nav className="my-2 top-0 left-0 w-full bg-white space-y-8 md:w-60 lg:w-80 sm:w-full border-r border-blue-100">
         {/* <SearchBar /> */}
         <div className="flex flex-col h-full px-4">
           <div className="overflow-auto">

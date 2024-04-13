@@ -5,12 +5,12 @@ namespace Src\Elements\Application;
 class MostrarDetalleEjercicioQuery
 {
     public function __construct(
-        private readonly string $category
+        private readonly string $id
     ) {
     }
 
-    public function category(): string
+    public function id(): string
     {
-        return $this->category;
+        return $this->id;
     }
 }

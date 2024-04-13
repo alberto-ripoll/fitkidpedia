@@ -1,9 +1,12 @@
 <?php
 
-namespace Src\Elements\Infrastructure\Datasource;
+namespace Src\Elements\Domain;
 
-interface EjerciciosRepository
+interface EjerciciosRepositoryInterface
 {
-    public function getEntity(int $id): array;
-    public function getCollection(int $id): array;
+    public function withCategory(string $category): array;
+    public function search(string $query): array;
+
+    public function all(): array;
+    public function find(int $id): array;
 }

@@ -2,6 +2,28 @@
 
 namespace Src\Elements\Infrastructure\Datasource;
 
-class EjerciciosRepository
+use Illuminate\Support\Facades\DB;
+use Src\Elements\Domain\EjerciciosRepositoryInterface;
+
+class EjerciciosRepository implements EjerciciosRepositoryInterface
 {
+    public function withCategory(string $category): array
+    {
+        return DB::table('ejercicios')->where('category', $category)->get()->toArray();
+    }
+
+    public function search(string $query): array
+    {
+        return DB::table('ejercicios')->where('name', 'like', "%$query%")->get()->toArray();
+    }
+
+    public function all(): array
+    {
+        return DB::table('ejercicios')->get()->toArray();
+    }
+
+    public function find(int $id): array
+    {
+        return DB::table('ejercicios')->where('id', $id)->get()->toArray();
+    }
 }

@@ -68,18 +68,18 @@ function ElementsPage({ category = "" }: { category: string }) {
         )}
         {elements.length === 0 && !loading && (
           <>
-            <h2 className="text-xl font-semibold text-center text-gray-800">
+            <h2 className="text-xl font-semibold text-center text-gray-800 my-8">
               No se encontraron ejercicios con ese nombre
             </h2>
 
           </>
         )}
-        <section className="grid gap-8 w-full lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+        <section className="grid gap-8 w-full my-8 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
           {!loading && elements.length !== 0 && elements.map((element) => (
             <ExerciseCard
               key={element.id} // Añadir un key único para cada elemento en la lista
               id={element.id}
-              tipo="Flexibilidad"
+              tipo={element.category}
               dificultad={element.difficulty}
               ruta={`/ejercicios/${element.category.toLowerCase()}/${element.name.replace(/\s/g, "-").toLowerCase()}`}
               imageUrl={element.imageUrl}

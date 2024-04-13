@@ -4,17 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Database\Seeders\Deploy\RoleSeeder;
-use Database\Seeders\Deploy\ZonaSeeder;
-use Database\Seeders\Deploy\ClaseSeeder;
-use Database\Seeders\Deploy\EquipoSeeder;
-use Src\Shared\Core\ValueObject\Uuid\UuidValue;
-use Database\Seeders\Deploy\AdministradorSeeder;
-use Src\Shared\Core\ValueObject\Fecha\FechaValue;
-use Src\Shared\Dao\Pago\Infrastructure\Eloquent\PagoEloquentModel;
-use Src\Shared\Dao\Usuario\Infrastructure\Eloquent\UsuarioEloquentModel;
-use Src\Shared\Dao\UsuarioDeportista\Infrastructure\Eloquent\UsuarioDeportistaEloquentModel;
-use Src\Shared\Dao\UsuarioMensualidadesPagadas\Infrastructure\Eloquent\UsuarioMensualidadesPagadasModel;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,29 +12,17 @@ class DatabaseSeeder extends Seeder
     {
         DB::beginTransaction();
 
-        // $this->call(TruncateAllTablesSeeder::class);
+        DB::insert(
+            'insert into ejercicios (nombre, image, video, descripcion, dificultad, tipo) values (?, ?, ?, ?, ?, ?)',
+            [
+                ['Lateral sin manos', '/ejercicios/lateral-sin-manos-quieta.png', '/ejercicios/lateral-sin-manos.MOV', '...', 'C', 'acrobacias'],
+                ['Paloma sin manos', '/ejercicios/paloma-sin-manos-quieta.png', '/ejercicios/paloma-sin-manos.MOV', '...', 'C', 'acrobacias'],
+                ['Flic flac', '/ejercicios/flic.png', '/ejercicios/flic.MOV', '...', 'C', 'acrobacias'],
+                ['Mortal carpado sin manos', '/ejercicios/paloma-sin-manos-quieta.png', '/ejercicios/carpado.MOV', '...', 'C', 'acrobacias'],
+                ['Infernal', '/ejercicios/infernal.jpeg', '/ejercicios/infernal.mp4', '...', 'H', 'fuerza'],
 
-        // $this->call(RoleSeeder::class);
-        // $this->call(ZonaSeeder::class);
-        // $this->call(EquipoSeeder::class);
-        // $this->call(AdministradorSeeder::class);
-        // $this->call(ClaseSeeder::class);
-
-
-
-        // UsuarioMensualidadesPagadasModel::factory([
-        //     'id' => UuidValue::create()->uuid(),
-        //     'cantidad' => 10,
-        //     'fecha' => FechaValue::ahora()->__toString(),
-        //     'tipo' => 'Efectivo',
-        // ])->create();
-
-        // PagoEloquentModel::factory([
-        //     'precio_deportista' => 70,
-        //     'precio_total' => 100,
-        //     'nombre' => 'Lotería',
-        //     'tipo' => 'Otro',
-        // ])->create();
+            ]
+        );
 
         DB::commit();
     }

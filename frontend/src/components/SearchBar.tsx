@@ -8,7 +8,7 @@ const SearchBar = ({ onChange }: SearchBarProps) => {
     <>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="px-4 mx-auto my-12 w-full"
+        className="px-4 mx-auto w-full"
       >
         <div className="relative">
           <svg

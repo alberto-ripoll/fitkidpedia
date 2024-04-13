@@ -18,10 +18,23 @@ function ExerciseCard({ id, ruta, dificultad, imageUrl, name, tipo }: ExerciseCa
     B: 'bg-red-500',
     C: 'bg-green-500',
     D: 'bg-yellow-500',
+    E: 'bg-purple-500',
+    F: 'bg-pink-500',
+    G: 'bg-indigo-500',
+    H: 'bg-red-500',
   };
+
+  const categoryColors: { [key: string]: string } = {
+    salto: 'bg-cyan-500',
+    fuerza: 'bg-red-500',
+    flexibilidad: 'bg-green-500',
+    acrobacias: 'bg-purple-500',
+  };
+
 
   // Función para obtener el color de fondo basado en la dificultad
   const getBackgroundColor = (dificultad: string) => difficultyColors[dificultad] || 'bg-gray-500';
+  const getCategoryColors = (tipo: string) => categoryColors[tipo] || 'bg-gray-500';
 
   return (
     // max-h-64 sm:min-w-32 md:min-w-56 lg:min-w-48 xl:min-w-52 w-80
@@ -33,8 +46,8 @@ function ExerciseCard({ id, ruta, dificultad, imageUrl, name, tipo }: ExerciseCa
       <div className={`absolute top-0 right-0 ${getBackgroundColor(dificultad)} p-2 rounded-bl-lg`}>
         <h6 className="text-white text-md">{dificultad}</h6>
       </div>
-      <div className={`absolute top-0 left-0 ${getBackgroundColor(dificultad)} p-2 rounded-br-lg`}>
-        <h6 className="text-white text-md">{tipo}</h6>
+      <div className={`absolute top-0 left-0 ${getCategoryColors(tipo)} p-2 rounded-br-lg`}>
+        <h6 className="text-white text-md">{tipo.charAt(0).toUpperCase() + tipo.slice(1)}</h6>
       </div>
     </div>
   );
