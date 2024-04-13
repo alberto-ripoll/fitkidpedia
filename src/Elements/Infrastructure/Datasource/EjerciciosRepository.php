@@ -24,6 +24,6 @@ class EjerciciosRepository implements EjerciciosRepositoryInterface
 
     public function find(string $name): array
     {
-        return DB::table('ejercicios')->where('nombre', $name)->get()->toArray();
+        return DB::table('ejercicios')->where('id', $name)->get()->toArray();
     }
 }

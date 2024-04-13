@@ -81,7 +81,7 @@ function ElementsPage({ category = "" }: { category: string }) {
               id={element.id}
               tipo={element.tipo}
               dificultad={element.dificultad}
-              ruta={`/ejercicios/${element.tipo.toLowerCase()}/${element.nombre.replace(/\s/g, "-").toLowerCase()}`}
+              ruta={`/ejercicios/${element.tipo.toLowerCase()}/${element.id}`}
               imageUrl={element.image}
               name={element.nombre}
             />
