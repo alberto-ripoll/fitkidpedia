@@ -69,7 +69,7 @@ function ElementsPage({ category = "" }: { category: string }) {
         {elements.length === 0 && !loading && (
           <>
             <h2 className="text-xl font-semibold text-center text-gray-800 my-8">
-              No se encontraron ejercicios con ese nombre
+              No se encontraron ejercicios
             </h2>
 
           </>
