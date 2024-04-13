@@ -14,6 +14,6 @@ class ListarEjerciciosRelacionadosQueryHandler
     public function run(ListarEjerciciosRelacionadosQuery $query)
     {
         $ejercicio = $this->repository->find($query->ejercicioId());
-        return $this->repository->withCategory($ejercicio["tipo"]);
+        return $this->repository->withCategory($ejercicio[0]["tipo"]);
     }
 }
