@@ -24,27 +24,27 @@ class ElementsController extends Controller
     ) {
     }
 
-    public function index()
+    public function index(string $categoria)
     {
-        $ejercicios = $this->listarEjerciciosDeCategoriaQueryHandler->run(new ListarEjerciciosDeCategoriaQuery(''));
+        $ejercicios = $this->listarEjerciciosDeCategoriaQueryHandler->run(new ListarEjerciciosDeCategoriaQuery($categoria));
         return ApiResponse::json($ejercicios);
     }
 
-    public function show()
+    public function show(string $id)
     {
-        $ejercicio = $this->mostrarDetalleEjercicioQueryHandler->run(new MostrarDetalleEjercicioQuery(''));
+        $ejercicio = $this->mostrarDetalleEjercicioQueryHandler->run(new MostrarDetalleEjercicioQuery($id));
         return ApiResponse::json($ejercicio);
     }
 
-    public function buscarRelacionados()
+    public function buscarRelacionados(string $id)
     {
-        $ejercicios = $this->listarEjerciciosRelacionadosQueryHandler->run(new ListarEjerciciosRelacionadosQuery(''));
+        $ejercicios = $this->listarEjerciciosRelacionadosQueryHandler->run(new ListarEjerciciosRelacionadosQuery($id));
         return ApiResponse::json($ejercicios);
     }
 
-    public function search()
+    public function search(string $query)
     {
-        $ejercicios = $this->buscarEjerciciosQueryHandler->run(new BuscarEjerciciosQuery(''));
+        $ejercicios = $this->buscarEjerciciosQueryHandler->run(new BuscarEjerciciosQuery($query));
         return ApiResponse::json($ejercicios);
     }
 }
