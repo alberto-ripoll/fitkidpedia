@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Support\Facades\RateLimiter;
 use Src\Auth\Infrastructure\Web\AuthRoutes;
+use Src\ChatBot\Infrastructure\Web\ChatBotRoutes;
 use Src\Elements\Infrastructure\Web\ElementsRoutes;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -36,6 +37,7 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware(['api'])->group(function () {
             AuthRoutes::configure();
             ElementsRoutes::configure();
+            ChatBotRoutes::configure();
         });
 
         //Otras rutas

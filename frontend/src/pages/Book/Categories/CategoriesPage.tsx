@@ -46,7 +46,7 @@ const imagenPorCategoria: { [key: string]: any } = {
     <ImageCategory imageUrl="https://paiporta.es/img/uploads/596afaf01.jpg" />,
 
   big_free:
-        <ImageCategory imageUrl="https://www.elperiodic.com/archivos/imagenes/noticias/2022/12/12/image-3.jpeg" />
+    <ImageCategory imageUrl="https://www.elperiodic.com/archivos/imagenes/noticias/2022/12/12/image-3.jpeg" />
 };
 
 function CategoriesPage({ categoria }: CategoriesPageProps) {
@@ -64,7 +64,7 @@ function CategoriesPage({ categoria }: CategoriesPageProps) {
         )}
         <hr className="my-8" />
         {textosPorCategoria[categoria]}
-        <section className="flex py-12 w-full xl:flex-row lg:flex-col md:flex-col sm:flex-col flex-col justify-center items-start gap-11">
+        <section className="flex py-12 w-full xl:flex-row lg:flex-col md:flex-col sm:flex-col flex-col justify-center items-center xl:items-start gap-11">
           {tablaPorCategoria[categoria]}
           {imagenPorCategoria[categoria]}
         </section>

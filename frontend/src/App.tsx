@@ -25,6 +25,7 @@ import FaqPage from "./pages/Book/Faq/FaqPage";
 import AreaPage from "./pages/Book/Competition/Area/AreaPage";
 import JudgePage from "./pages/Book/Competition/Judge/JudgePage";
 import ChoreographyPage from "./pages/Book/Competition/Choreography/ChoreographyPage";
+import NivelBasePage from "./pages/Book/Niveles/NivelBasePage";
 // import Marquesina from "./components/Marquesina/Marquesina";
 
 function App() {
@@ -70,6 +71,11 @@ function App() {
             <Route path="/categorias/small" element={<CategoriesPage categoria="small" />} />
             <Route path="/categorias/big" element={<CategoriesPage categoria="big" />} />
             <Route path="/categorias/big-free" element={<CategoriesPage categoria="big_free" />} />
+
+            <Route path="/niveles/base" element={<NivelBasePage />} />
+            <Route path="/niveles/promesa" element={<NivelBasePage />} />
+            <Route path="/niveles/nacional" element={<NivelBasePage />} />
+
 
             <Route path="/competicion/area" element={<AreaPage />} />
             <Route path="/competicion/jueces" element={<JudgePage />} />

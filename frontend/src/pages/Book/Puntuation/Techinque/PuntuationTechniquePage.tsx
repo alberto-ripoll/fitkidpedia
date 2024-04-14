@@ -14,18 +14,25 @@ const PuntuationTechniquePage = () => {
       <hr className="my-8" />
       <p className="text-lg text-gray-700 font-light px-4 py-2 leading-loose bg-orange-50 shadow-md rounded-md">
         {" "}
-        Se asignan puntos considerando el contenido de la rutina (ejercicios) y la ejecución técnica de estos.
+        Se asignan puntos considerando los ejercicios y la ejecución técnica de estos. 
+        <br></br>
+        La <span className="font-bold">puntuación máxima</span> es de 10 puntos.
       </p>
 
       <section className="flex divide-x gap-8 w-full my-12">
+      
         <Tabla
-          cabeceras={["CATEGORÍA", 'MÁXIMOS PUNTOS']}
-          filas={[
-            ["I - II / BOY A",  "10 puntos"],
-            ["III - IV / BOY B",  "10 puntos"],
-            ["V - IX / Senior / Men / Boy C y D",  "10 puntos"],
-          ]}
-        />
+  cabeceras={["RANGO DE PUNTUACIÓN", "DESCRIPCIÓN"]}
+  filas={[
+    ["0,0 – 1,9", "INSATISFACTORIO"],
+    ["2,0 – 3,9", "POBRE"],
+    ["4,0 – 5,9", "SATISFACTORIO"],
+    ["6,0 – 7,9", "BUENO"],
+    ["8,0 – 9,9", "EXCELENTE"],
+    ["10", "PERFECTO"],
+  ]}
+/>
+
 
 
       </section>

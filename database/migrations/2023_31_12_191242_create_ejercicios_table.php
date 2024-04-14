@@ -16,6 +16,7 @@ return new class extends Migration
 
             $table->string('nombre');
             $table->string('image')->nullable();
+            $table->string('autor')->nullable();
             $table->string('video')->nullable();
             $table->string('descripcion')->nullable();
             $table->string('dificultad')->nullable();

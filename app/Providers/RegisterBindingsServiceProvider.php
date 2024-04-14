@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Src\ChatBot\Infrastructure\Bindings\ChatBotBindings;
 use Src\Elements\Infrastructure\Bindings\EjerciciosBindings;
 
 class RegisterBindingsServiceProvider extends ServiceProvider
@@ -14,6 +15,7 @@ class RegisterBindingsServiceProvider extends ServiceProvider
      */
     protected $packagesBindingsRegister = [
         EjerciciosBindings::class,
+        ChatBotBindings::class,
     ];
     /**
      * Register services.

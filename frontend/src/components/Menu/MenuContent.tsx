@@ -1,5 +1,6 @@
 import { FaPuzzlePiece, FaUsers, FaQuestionCircle, FaTrophy, FaRegLightbulb, FaStar } from "react-icons/fa";
 import MenuItem from "./MenuItem";
+import { FaStairs } from "react-icons/fa6";
 
 const nestedNav = [
   { name: "Acrobacias", href: "/ejercicios/acrobacias", icon: "" },
@@ -27,12 +28,11 @@ const nestedNavCompeticion = [
   // { name: "Coreografía", href: "/competicion/coreografia", icon: "" },
 ];
 
-
-
-// const nestedNavPuntuacionGrupal = [
-//   { name: "Duo, Small y Big", href: "/puntuacion-grupal/grupos", icon: "" },
-//   { name: "Big Free", href: "/puntuacion-grupal/big-free", icon: "" },
-// ];
+const nestedNavNiveles = [
+  { name: "Base", href: "/niveles/base", icon: "" },
+  { name: "Promesa", href: "/niveles/promesa", icon: "" },
+  { name: "Nacional", href: "/niveles/nacional", icon: "" },
+];
 
 const nestedNavIntroduccion = [
   { name: "¿Qué es el FitKid?", href: "/introduccion/que-es-fitkid", icon: "" },
@@ -55,6 +55,9 @@ const MenuContent = () => {
 
       <MenuItem items={nestedNavEdad} text="Categorias">
         <FaUsers />
+      </MenuItem>
+      <MenuItem items={nestedNavNiveles} text="Niveles">
+        <FaStairs />
       </MenuItem>
       <MenuItem items={nestedNav} text="Ejercicios">
         <FaPuzzlePiece />
