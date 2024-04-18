@@ -23,6 +23,10 @@ class ElementsController extends Controller
         public readonly MostrarDetalleEjercicioQueryHandler $mostrarDetalleEjercicioQueryHandler
     ) {
     }
+    public function crear()
+    {
+        return ApiResponse::json(['message' => 'Not implemented yet'], 501);
+    }
 
     public function index(string $categoria)
     {

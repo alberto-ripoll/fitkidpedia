@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { Component } from 'react';
 import ChatBot, { Loading } from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
-import { ElementsService } from '../../pages/Book/Elements/service/ElementsService';
 import ChatBotApi from './ChatBotApi';
 
 const theme = {
@@ -17,8 +15,15 @@ const theme = {
   userFontColor: '#4a4a4a',
 };
 
-class DBPedia extends Component {
-  constructor(props) {
+interface State {
+  loading: boolean;
+  result: string;
+  trigger: boolean;
+}
+
+
+class DBPedia extends Component<any, State> {
+  constructor(props: any) {
     super(props);
 
     this.state = {
@@ -73,15 +78,7 @@ class DBPedia extends Component {
   }
 }
 
-DBPedia.propTypes = {
-  steps: PropTypes.object,
-  triggerNextStep: PropTypes.func,
-};
 
-DBPedia.defaultProps = {
-  steps: undefined,
-  triggerNextStep: undefined,
-};
 
 const ChatBotComponent = () => (
   <ThemeProvider theme={theme}>

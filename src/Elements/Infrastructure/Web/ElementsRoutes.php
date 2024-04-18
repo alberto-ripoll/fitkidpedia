@@ -17,6 +17,7 @@ class ElementsRoutes extends ApiBaseRoutes
                 Route::get('/elemento/{exercise}', [ElementsController::class, 'show']);
                 Route::get('/relacionados/{exercise}', [ElementsController::class, 'buscarRelacionados']);
                 Route::get('/buscar/{query}', [ElementsController::class, 'search']);
+                Route::post('/', [ElementsController::class, 'crear']);
             });
     }
 }
