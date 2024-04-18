@@ -16,7 +16,7 @@ class ChatBotController extends Controller
     ) {
     }
 
-    public function ask(Request $request)
+    public function ask($request)
     {
         $pregunta = $request->input('pregunta');
         $respuesta = $this->preguntarChatBotQueryHandler->run(new PreguntarChatBotQuery($pregunta));
