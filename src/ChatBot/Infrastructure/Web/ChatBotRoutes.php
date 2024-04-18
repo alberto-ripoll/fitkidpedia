@@ -13,7 +13,7 @@ class ChatBotRoutes extends ApiBaseRoutes
     {
         Route::prefix(self::$prefix)
             ->group(function () {
-                Route::post('', [ChatBotController::class, 'ask']);
+                Route::post('/', [ChatBotController::class, 'ask']);
             });
     }
 }
