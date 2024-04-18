@@ -16,7 +16,6 @@ class ChatBotRepository implements ChatBotRepositoryInterface
         $ruta = storage_path() . '/fitkidpedia_pdf_text/fitkidpedia_text';
         // $pdf = file_get_contents($ruta);
 
-        // $api_key = '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';
 
         // $client = new Client([
         //     'base_uri' => 'https://api.anthropic.com',
