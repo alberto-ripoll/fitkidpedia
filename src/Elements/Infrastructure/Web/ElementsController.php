@@ -2,12 +2,9 @@
 
 namespace Src\Elements\Infrastructure\Web;
 
-use \Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Src\Shared\Core\Foundation\Http\ApiResponse;
-use Src\ChatBot\Application\PreguntarChatBotQuery;
 use Src\Elements\Application\BuscarEjerciciosQuery;
-use Src\ChatBot\Application\PreguntarChatBotQueryHandler;
 use Src\Elements\Application\BuscarEjerciciosQueryHandler;
 use Src\Elements\Application\MostrarDetalleEjercicioQuery;
 use Src\Elements\Application\ListarEjerciciosDeCategoriaQuery;
@@ -23,19 +20,13 @@ class ElementsController extends Controller
         public readonly BuscarEjerciciosQueryHandler $buscarEjerciciosQueryHandler,
         public readonly ListarEjerciciosDeCategoriaQueryHandler $listarEjerciciosDeCategoriaQueryHandler,
         public readonly ListarEjerciciosRelacionadosQueryHandler $listarEjerciciosRelacionadosQueryHandler,
-        public readonly MostrarDetalleEjercicioQueryHandler $mostrarDetalleEjercicioQueryHandler,
-        public readonly PreguntarChatBotQueryHandler $preguntarChatBotQueryHandler,
-
+        public readonly MostrarDetalleEjercicioQueryHandler $mostrarDetalleEjercicioQueryHandler
     ) {
     }
-    public function crear(Request $request)
+    public function crear()
     {
-        $pregunta = $request->input('pregunta');
-        $respuesta = $this->preguntarChatBotQueryHandler->run(new PreguntarChatBotQuery($pregunta));
-        return ApiResponse::json($respuesta);
-        return ApiResponse::json(['message' => 'Not implemented yet'], 200);
+        return ApiResponse::json(['message' => 'Not implemented yet'], 501);
     }
-
 
     public function index(string $categoria)
     {
