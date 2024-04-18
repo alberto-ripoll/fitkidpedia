@@ -25,7 +25,7 @@ class ElementsController extends Controller
     }
     public function crear()
     {
-        return ApiResponse::json(['message' => 'Not implemented yet'], 501);
+        return ApiResponse::json(['message' => 'Not implemented yet'], 200);
     }
 
     public function index(string $categoria)

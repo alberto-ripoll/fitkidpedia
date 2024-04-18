@@ -1,6 +1,7 @@
 import { useState } from "react";
 import DragComponent from "../../../components/DragDrop/DragComponent";
 import Formulario from "./components/Form";
+import axiosClient from "../../../lib/axios-client";
 
 const NewElementsPage = () => {
   const [isFormReady, setIsFormReady] = useState(false);
@@ -27,7 +28,7 @@ const NewElementsPage = () => {
         <button
           disabled={!isFormReady}
           className={`py-2 px-4 rounded focus:outline-none focus:shadow-outline w-3/4 ${isFormReady ? 'bg-blue-500 hover:bg-blue-700 text-white font-bold' : 'bg-gray-300 cursor-not-allowed text-gray-600 font-medium'}`}
-
+          onClick={() => axiosClient.post('/ejercicios', {})}
           type="button"
         >
           Subir Ejercicio
