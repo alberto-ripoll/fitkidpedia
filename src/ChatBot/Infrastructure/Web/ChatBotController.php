@@ -2,6 +2,7 @@
 
 namespace Src\ChatBot\Infrastructure\Web;
 
+use \Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Src\Shared\Core\Foundation\Http\ApiResponse;
 use Src\ChatBot\Application\PreguntarChatBotQuery;
@@ -15,11 +16,10 @@ class ChatBotController extends Controller
     ) {
     }
 
-    public function ask($request)
+    public function ask(Request $request)
     {
         $pregunta = $request->input('pregunta');
-
-        $ejercicios = $this->preguntarChatBotQueryHandler->run(new PreguntarChatBotQuery($pregunta));
-        return ApiResponse::json($ejercicios);
+        $respuesta = $this->preguntarChatBotQueryHandler->run(new PreguntarChatBotQuery($pregunta));
+        return ApiResponse::json($respuesta);
     }
 }

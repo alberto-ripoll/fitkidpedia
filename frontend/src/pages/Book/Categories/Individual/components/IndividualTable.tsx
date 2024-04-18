@@ -16,17 +16,17 @@ const categorias = [
 ];
 
 const categoriasMasculinas = [
-  ['7 a 10 años', 'A', 'A-D'],
-  ['11 a 12 años', 'B', 'A-E'],
-  ['13 a 15 años', 'C', 'A-H'],
-  ['16 a 18 años', 'D', 'A-H'],
-  ['19 años en adelante', 'MEN', 'A-H'],
+  ['7 a 10 años', 'BOY A', 'A-D'],
+  ['11 a 12 años', 'BOY B', 'A-E'],
+  ['13 a 15 años', 'BOY C', 'A-H'],
+  ['16 a 18 años', 'BOY D', 'A-H'],
+  ['19 años en adelante', 'SENIOR', 'A-H'],
 ];
 const IndividualTable = () => {
   const [showMaleCategories, setShowMaleCategories] = useState(false);
 
   const categoriesToShow = showMaleCategories ? categoriasMasculinas : categorias;
-  
+
   return (
     <>
       <div className="relative w-full mx-auto my-8 bg-gray-50 p-4 shadow-md rounded-md">
@@ -38,7 +38,7 @@ const IndividualTable = () => {
             <GiFemale className="mr-2" />
             Femenino
           </button>
-          
+
           <button
             onClick={() => setShowMaleCategories(true)}
             className={`w-full flex items-center border-b-2 ${showMaleCategories ? 'border-blue-700 hover:border-blue-700 text-blue-700' : 'text-gray-500 border-gray-500 hover:border-blue-700 hover:text-blue-700'} font-bold py-2 px-4`}

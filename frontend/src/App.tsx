@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "./components/Header";
 import ExercisePage from "./pages/Book/Exercises/ExercisePage";
+
 import HomePage from "./pages/Home/HomePage";
 import {
   Navigate,
@@ -27,12 +28,15 @@ import JudgePage from "./pages/Book/Competition/Judge/JudgePage";
 import ChoreographyPage from "./pages/Book/Competition/Choreography/ChoreographyPage";
 import NivelBasePage from "./pages/Book/Niveles/NivelBasePage";
 // import Marquesina from "./components/Marquesina/Marquesina";
+import ChatBotComponent from "./components/ChatBot/ChatBotComponent";
+
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const location = useLocation();
+
+
   useEffect(() => {
     window.scrollTo(0, 0);
     setIsMenuOpen(false);
@@ -94,6 +98,7 @@ function App() {
 
 
       </section>
+      <ChatBotComponent />
       {location.pathname == '/' && <Footer />}
     </div>
   );

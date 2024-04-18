@@ -11,20 +11,14 @@ function NivelBasePage() {
         <section className="flex flex-col md:flex-row gap-3">
           <div>
             <p className="text-lg text-gray-700 font-light px-4 py-2 leading-loose bg-orange-50 shadow-md rounded-md">
-              En el <span className="font-bold">nivel base</span> es obligatorio presentar un ejercicio de cada tipo: <span className="font-bold">acrobacias, baile, fuerza y flexibilidad</span> y 2 elementos extra
+              En el <span className="font-bold">nivel base</span> es el nivel de competición inicial.
+              <br></br>
+              Es obligatorio presentar un ejercicio de cada tipo: <span className="font-bold">acrobacias, baile, fuerza y flexibilidad</span> y 2 elementos extra
               obligatorios escogidos libremente entre 2 grupos distintos de cada tipo.
               <br></br>
-              En el caso de las categorías
-BOY y Senior Masculino, en
-lugar de los elementos de
-flexibilidad, deben presentar
-2 elementos acrobáticos, 2
-elementos de fuerza, 1
-elemento de salto y 1
-elemento extra obligatorio
-escogido libremente entre los
-grupos de elementos de
-acrobacia, fuerza y salto.
+              <br></br>
+              Para las categorías <span className="font-bold">BOY</span> y <span className="font-bold">Senior Masculino</span>, en lugar de los elementos de <span className="font-bold">flexibilidad</span>, deben presentar <span className="font-bold">2 elementos acrobáticos</span>, <span className="font-bold">2 elementos de fuerza</span>, <span className="font-bold">1 elemento de salto</span> y <span className="font-bold">1 elemento extra obligatorio</span> escogido libremente entre los grupos de elementos de <span className="font-bold">acrobacia</span>, <span className="font-bold">fuerza</span> y <span className="font-bold">salto</span>.
+
             </p>
           </div>
           <div>
