@@ -13,6 +13,7 @@ class PreguntarChatBotQueryHandler
 
     public function run(PreguntarChatBotQuery $query): string
     {
+        return 'jaja';
         $detalle = $this->repository->ask($query->pregunta());
 
         return $detalle;

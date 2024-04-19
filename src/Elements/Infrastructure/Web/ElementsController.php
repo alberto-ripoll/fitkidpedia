@@ -23,9 +23,8 @@ class ElementsController extends Controller
         public readonly MostrarDetalleEjercicioQueryHandler $mostrarDetalleEjercicioQueryHandler
     ) {
     }
-    public function crear($request)
+    public function crear(CrearElementoRequest $request)
     {
-        $pregunta = $request->input('pregunta');
         return ApiResponse::json(['message' => 'Not implemented yet'], 200);
     }
 

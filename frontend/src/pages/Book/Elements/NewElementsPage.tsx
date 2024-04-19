@@ -3,16 +3,30 @@ import DragComponent from "../../../components/DragDrop/DragComponent";
 import Formulario from "./components/Form";
 import axiosClient from "../../../lib/axios-client";
 
+interface FormProps {
+  nombre: string,
+  nombreEjercicio: string,
+  tipo: string,
+  dificultad: string
+
+}
 const NewElementsPage = () => {
   const [isFormReady, setIsFormReady] = useState(false);
+  const [formData, setFormData] = useState(false);
 
-  const handleInputChange = (e: string) => {
-    if (e === '') {
+  const handleInputChange = (e: FormProps) => {
+    setFormData(e);
+    if (e.nombre === '' || e.nombreEjercicio === '') {
       setIsFormReady(false);
       return;
     }
     setIsFormReady(true);
   };
+
+  const handleFormSubmit = async () => {
+    await axiosClient.post('/ejercicios', formData);
+  }
+
 
   return (
     <>
@@ -28,12 +42,12 @@ const NewElementsPage = () => {
         <button
           disabled={!isFormReady}
           className={`py-2 px-4 rounded focus:outline-none focus:shadow-outline w-3/4 ${isFormReady ? 'bg-blue-500 hover:bg-blue-700 text-white font-bold' : 'bg-gray-300 cursor-not-allowed text-gray-600 font-medium'}`}
-          onClick={() => axiosClient.post('/ejercicios', {})}
+          onClick={() => handleFormSubmit()}
           type="button"
         >
           Subir Ejercicio
         </button>
-      </div>
+      </div >
     </>
   );
 };

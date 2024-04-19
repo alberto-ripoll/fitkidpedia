@@ -1,7 +1,23 @@
+import { useState } from "react";
 import SelectCategories from "../../../../components/SelectCategories";
 import SelectNivel from "../../../../components/SelectNivel";
 
 const Formulario = ({ handleInputChange, isFormReady }: any) => {
+  const [formData, setFormData] = useState({
+    nombre: '',
+    nombreEjercicio: '',
+    tipo: '',
+    dificultad: ''
+  });
+
+  const handleFormChange = (field: string, value: string) => {
+    setFormData({
+      ...formData,
+      [field]: value
+    });
+    handleInputChange(formData);
+  };
+
 
   return (
     <>
@@ -15,7 +31,7 @@ const Formulario = ({ handleInputChange, isFormReady }: any) => {
               Tu Nombre (requerido)
             </label>
             <input
-              onChange={(e) => handleInputChange(e.target.value)}
+              onChange={(e) => handleFormChange('nombre', e.target.value)}
               className={`appearance-none block w-full bg-white text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white ${!isFormReady ? 'border-red-500' : 'border-gray-200'}`}
               id="grid-first-name"
               type="text"
@@ -36,7 +52,7 @@ const Formulario = ({ handleInputChange, isFormReady }: any) => {
               Nombre del ejercicio (requerido)
             </label>
             <input
-              onChange={(e) => handleInputChange(e.target.value)}
+              onChange={(e) => handleFormChange('nombreEjercicio', e.target.value)}
               className={`appearance-none block w-full bg-white text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white ${!isFormReady ? 'border-red-500' : 'border-gray-200'}`}
               id="grid-first-name"
               type="text"
@@ -56,7 +72,7 @@ const Formulario = ({ handleInputChange, isFormReady }: any) => {
             >
               Tipo
             </label>
-            <SelectCategories onCategoryChange={() => { }} />
+            <SelectCategories onCategoryChange={(category) => handleFormChange('tipo', category)} />
           </div>
           <div className="w-1/3 mb-6">
             <label
@@ -65,7 +81,7 @@ const Formulario = ({ handleInputChange, isFormReady }: any) => {
             >
               Dificultad
             </label>
-            <SelectNivel onCategoryChange={() => { }} />
+            <SelectNivel onCategoryChange={(nivel) => handleFormChange('nivel', nivel)} />
           </div>
         </div>
         {/* <div className="flex flex-wrap my-6">
@@ -83,7 +99,7 @@ const Formulario = ({ handleInputChange, isFormReady }: any) => {
             />
           </div>
         </div> */}
-  
+
       </form>
 
 

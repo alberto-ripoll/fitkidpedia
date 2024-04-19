@@ -14,11 +14,9 @@ class ChatBotController extends Controller
     ) {
     }
 
-    public function ask($request)
+    public function ask(ChatBotRequest $request)
     {
         $pregunta = $request->input('pregunta');
-        return ApiResponse::json($pregunta, 200);
-
         $respuesta = $this->preguntarChatBotQueryHandler->run(new PreguntarChatBotQuery($pregunta));
         return ApiResponse::json($respuesta);
     }

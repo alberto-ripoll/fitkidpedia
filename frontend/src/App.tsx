@@ -28,8 +28,6 @@ import JudgePage from "./pages/Book/Competition/Judge/JudgePage";
 import ChoreographyPage from "./pages/Book/Competition/Choreography/ChoreographyPage";
 import NivelBasePage from "./pages/Book/Niveles/NivelBasePage";
 // import Marquesina from "./components/Marquesina/Marquesina";
-import ChatBotComponent from "./components/ChatBot/ChatBotComponent";
-
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -98,7 +96,6 @@ function App() {
 
 
       </section>
-      <ChatBotComponent />
       {location.pathname == '/' && <Footer />}
     </div>
   );
