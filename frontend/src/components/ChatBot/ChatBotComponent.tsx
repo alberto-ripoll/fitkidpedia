@@ -96,7 +96,7 @@ const ChatBotComponent = () => (
         },
         {
           id: '1',
-          message: '¿Cuál es tu pregunta sobre el códgio?',
+          message: '¿Cuál es tu pregunta sobre el código?',
           trigger: 'search',
         },
         {
